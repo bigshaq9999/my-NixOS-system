@@ -1,6 +1,6 @@
 [
   ./chromium.nix
-  # ./firefox.nix
+  ./firefox.nix
   ./kde-connect.nix
   ./nvim.nix
   ./packages.nix

@@ -1,9 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.firefox = {
     enable = true;
     profiles.main = {
       isDefault = true;
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
         ublock-origin
         tree-style-tab
         sponsorblock
@@ -11,10 +15,7 @@
         return-youtube-dislikes
         violentmonkey
         darkreader
-        old-twitter-layout-2022
-        socialfixer
         youtube-recommended-videos
-        vimium-ff
       ];
     };
     policies = {

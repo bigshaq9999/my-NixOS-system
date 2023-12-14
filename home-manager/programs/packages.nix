@@ -78,7 +78,6 @@ in {
     libsForQt5.ark
 
     # other
-    firefox
     brave
     microsoft-edge
     obs-studio
