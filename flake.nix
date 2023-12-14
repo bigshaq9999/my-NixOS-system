@@ -63,7 +63,6 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          # TODO figure out how to add NUR to this
           ./home-manager/home.nix
           inputs.plasma-manager.homeManagerModules.plasma-manager
         ];

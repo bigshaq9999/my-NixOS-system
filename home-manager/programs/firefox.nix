@@ -15,10 +15,7 @@
         return-youtube-dislikes
         violentmonkey
         darkreader
-        old-twitter-layout-2022
-        socialfixer
         youtube-recommended-videos
-        vimium-ff
       ];
     };
     policies = {
