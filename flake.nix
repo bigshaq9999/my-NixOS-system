@@ -35,6 +35,10 @@
     nix-vscode-extensions,
     ...
   } @ inputs: let
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     inherit (self) outputs;
     system = "x86_64-linux";
     username = "kunny";
@@ -58,12 +62,6 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          {
-            firefox-addons = {
-              url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-              inputs.nixpkgs.follows = "nixpkgs";
-            };
-          }
           # TODO figure out how to add NUR to this
           ./home-manager/home.nix
           inputs.plasma-manager.homeManagerModules.plasma-manager
