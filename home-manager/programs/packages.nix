@@ -63,7 +63,6 @@ in {
     # windows
     wineWowPackages.stable
     winetricks
-    bottles
 
     # educational
     onlyoffice-bin
