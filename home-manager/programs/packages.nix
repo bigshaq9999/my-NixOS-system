@@ -78,6 +78,7 @@ in {
     libsForQt5.ark
 
     # other
+    teamviewer
     brave
     microsoft-edge
     obs-studio
