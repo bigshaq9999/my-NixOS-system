@@ -7,6 +7,7 @@
       latexmk
       enumitem
       was
+      lastpage
       ;
   };
 in {
@@ -51,7 +52,8 @@ in {
     thunderbird
     tdesktop
     # element-desktop
-    fluffychat
+    # fluffychat
+    nheko
 
     # Sound
     pavucontrol
