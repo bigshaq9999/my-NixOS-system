@@ -27,6 +27,9 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Meanvoid - 2hu cursors
+    meanvoid.url = "github:meanvoid/nixos-overlay";
   };
 
   outputs = {
@@ -38,6 +41,7 @@
     alejandra,
     vscode-server,
     nix-vscode-extensions,
+    meanvoid,
     ...
   } @ inputs: let
     inherit (self) outputs;
