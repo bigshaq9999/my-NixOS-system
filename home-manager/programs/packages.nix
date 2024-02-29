@@ -51,9 +51,8 @@ in {
     # Social
     thunderbird
     tdesktop
-    # element-desktop
-    # fluffychat
     nheko
+    vesktop
 
     # Sound
     pavucontrol
@@ -85,7 +84,7 @@ in {
     microsoft-edge
     obs-studio
     gimp
-    # bitwarden
+    bitwarden
     tor-browser-bundle-bin
 
     # network
