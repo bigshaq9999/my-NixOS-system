@@ -125,7 +125,7 @@
 
   # Bluetooth
   hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = false;
+  hardware.bluetooth.powerOnBoot = true;
 
   # Configure keymap in X11
   services.xserver.layout = "us";

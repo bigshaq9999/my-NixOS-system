@@ -9,8 +9,8 @@
     shellAliases = {
       ll = "ls -lah";
       update = "nix-channel --update";
-      sysupgrade = "cd /etc/nixos/ && nixos-rebuild switch --use-remote-sudo --flake .#nixos --show-trace";
-      homeupgrade = "cd /etc/nixos/ && sudo home-manager switch --flake .#kunny@nixos --show-trace --impure";
+      rebuild = "cd /etc/nixos/ && nixos-rebuild switch --use-remote-sudo --flake .#nixos";
+      upgrade = "cd /etc/nixos/ && home-manager switch --flake /etc/nixos/.#kunny@nixos --impure";
       garbage = "sudo nix-collect-garbage --delete-older-than 14d";
       todo = "vim /home/kunny/todo.md";
       cfg = "sudo vim /etc/nixos/";
