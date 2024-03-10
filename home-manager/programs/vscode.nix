@@ -68,6 +68,7 @@ in {
       "terminal.integrated.fontFamily" = "Hack";
       "window.menuBarVisibility" = "toggle";
       "window.zoomLevel" = 0.75;
+      "workbench.sideBar.location" = "right";
 
       "workbench.colorTheme" = "Gruvbox Dark Medium";
 
