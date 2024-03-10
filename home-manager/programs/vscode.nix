@@ -86,6 +86,10 @@ in {
         "editor.formatOnType" = true;
       };
 
+      "[html]" = {
+        "editor.defaultFormatter" = "vscode.html-language-features";
+      };
+
       "[nix]" = {
         "editor.defaultFormatter" = "kamadorueda.alejandra";
         "editor.formatOnPaste" = true;
