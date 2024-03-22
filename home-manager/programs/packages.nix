@@ -3,11 +3,14 @@
     inherit
       (pkgs.texlive)
       scheme-tetex
-      collection-langcyrillic
       latexmk
       enumitem
       was
       lastpage
+      titlesec
+      ebgaramond
+      microtype
+      fontaxes
       ;
   };
 in {
