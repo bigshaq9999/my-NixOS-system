@@ -7,16 +7,19 @@
     enable = true;
     profiles.main = {
       isDefault = true;
-      extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
-        ublock-origin
-        tree-style-tab
-        sponsorblock
-        dearrow
-        return-youtube-dislikes
-        violentmonkey
-        darkreader
-        youtube-recommended-videos
-      ];
+      extensions = builtins.attrValues {
+        inherit
+          (inputs.firefox-addons.packages.${pkgs.system})
+          ublock-origin
+          tree-style-tab
+          sponsorblock
+          dearrow
+          return-youtube-dislikes
+          violentmonkey
+          darkreader
+          youtube-recommended-videos
+          ;
+      };
     };
     policies = {
       DisableTelemetry = true;
