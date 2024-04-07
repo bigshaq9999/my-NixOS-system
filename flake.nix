@@ -23,10 +23,8 @@
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
 
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
 
     # Meanvoid - 2hu cursors
     meanvoid.url = "github:meanvoid/nixos-overlay";
@@ -45,8 +43,6 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-    system = "x86_64-linux";
-    username = "kunny";
   in {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
