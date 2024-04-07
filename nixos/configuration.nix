@@ -96,6 +96,8 @@
         fcitx5-unikey
         libsForQt5.fcitx5-qt
       ];
+      fcitx5 = {
+        plasma6Support = true;
     };
   };
 

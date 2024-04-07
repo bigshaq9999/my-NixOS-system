@@ -1,13 +1,10 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
-  services.xserver = {
-    enable = true;
-    displayManager.defaultSession = "plasmawayland";
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
+_: {
+  services = {
+    xserver = {
+      enable = true;
+      displayManager.defaultSession = "plasmawayland";
+      displayManager.sddm.enable = true;
+    };
+    desktopManager.plasma6.enable = true;
   };
 }
