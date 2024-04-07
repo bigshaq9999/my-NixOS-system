@@ -9,11 +9,10 @@
     inputMethod = {
       enabled = "fcitx5";
       # fcitx.engines = with pkgs.fcitx-engines; [ mozc unikey ];
-      fcitx5.addons = with pkgs; [
-        fcitx5-mozc
-        fcitx5-unikey
-        libsForQt5.fcitx5-qt
-      ];
+      fcitx5.addons = builtins.attrValues {
+        inherit (pkgs) fcitx5-mozc fcitx5-unikey;
+        fcitx5-qt = pkgs.libsForQt5.fcitx5-qt;
+      };
     };
   };
 }
