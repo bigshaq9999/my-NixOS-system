@@ -2,7 +2,6 @@
   inputs,
   outputs,
   nixpkgs,
-  vscode-server,
   nur,
   home-manager,
   ...
@@ -15,8 +14,6 @@
 
     nur.nixosModules.nur
 
-    nixos-hardware.nixosModules.lenovo-legion-15arh05h
-
     {nixpkgs.overlays = [nur.overlay];}
     ({pkgs, ...}: let
       nur-no-pkgs = import nur {
@@ -26,12 +23,19 @@
       imports = [nur-no-pkgs.repos.iopq.modules.xraya];
       services.xraya.enable = true;
     })
+
+    home-manager.nixosModules.home-manager
     {
-      environment.systemPackages = [alejandra.defaultPackage.${system}];
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.kunny = import ../home-manager/home.nix;
+        extraSpecialArgs = {inherit inputs outputs system;};
+      };
     }
   ];
 in {
-  nyx = inputs.nixpkgs.lib.nixosSystem {
+  kunny = inputs.nixpkgs.lib.nixosSystem {
     inherit system;
     inherit specialArgs;
     inherit modules;
