@@ -90,6 +90,7 @@
     # kde plasma
     kcalc = pkgs.libsForQt5.kcalc;
     ark = pkgs.libsForQt5.ark;
+    kolourpaint = pkgs.libsForQt5.kolourpaint;
 
     inherit
       (pkgs)
