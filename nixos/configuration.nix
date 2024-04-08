@@ -90,27 +90,6 @@
   };
   fonts.fontDir.enable = true;
 
-  # Input
-  environment.sessionVariables = {
-    GTK_IM_MODULE = "fcitx";
-    QT_IM_MODULE = "fcitx";
-    XMODIFIERS = "@im=fcitx";
-  };
-
-  i18n = {
-    inputMethod = {
-      enabled = "fcitx5";
-      # fcitx.engines = with pkgs.fcitx-engines; [ mozc unikey ];
-      fcitx5 = {
-        plasma6Support = true;
-        addons = builtins.attrValues {
-          inherit (pkgs) fcitx5-mozc fcitx5-unikey;
-          fcitx5-qt = pkgs.libsForQt5.fcitx5-qt;
-        };
-      };
-    };
-  };
-
   # Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
