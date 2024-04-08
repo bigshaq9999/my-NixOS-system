@@ -1,18 +1,20 @@
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  nur,
-  ...
-}: {
-  imports =
-    []
-    ++ (import ./programs);
+_: {
+  imports = [
+    ./programs/nvim/default.nix
+
+    ./programs/vscode/default.nix
+    ./programs/vscode/extensions.nix
+    ./programs/vscode/settings.nix
+
+    ./programs/chromium.nix
+    ./programs/firefox.nix
+    ./programs/kde-connect.nix
+    ./programs/packages.nix
+    ./programs/zsh.nix
+  ];
 
   nixpkgs = {
-    overlays = [
-    ];
+    # overlays = [];
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
@@ -32,5 +34,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 }

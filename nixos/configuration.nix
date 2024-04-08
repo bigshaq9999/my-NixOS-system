@@ -8,7 +8,14 @@
   ...
 }: {
   # You can import other NixOS modules here
-  imports = [./hardware-configuration.nix] ++ (import ./configs);
+  imports = [
+    ./hardware-configuration.nix
+    ./configs/fonts.nix
+    ./configs/input.nix
+    ./configs/plasma.nix
+    ./configs/power.nix
+    ./configs/program-config.nix
+  ];
 
   nixpkgs = {
     overlays = [];
@@ -54,9 +61,9 @@
   networking.hostName = "nixos";
   networking.networkmanager = {
     enable = true;
-    plugins = with pkgs; [
-      networkmanager-openvpn
-    ];
+    plugins = builtins.attrValues {
+      inherit (pkgs) networkmanager-openvpn;
+    };
   };
 
   # Set your time zone.
@@ -70,14 +77,17 @@
   };
 
   # Fonts
-  fonts.packages = with pkgs; [
-    comic-mono
-    hack-font
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    (nerdfonts.override {fonts = ["FiraCode" "DroidSansMono"];})
-  ];
+  fonts.packages = builtins.attrValues {
+    inherit
+      (pkgs)
+      comic-mono
+      hack-font
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      ;
+    nerdfonts = pkgs.nerdfonts.override {fonts = ["FiraCode" "DroidSansMono"];};
+  };
   fonts.fontDir.enable = true;
 
   # Input
@@ -91,11 +101,13 @@
     inputMethod = {
       enabled = "fcitx5";
       # fcitx.engines = with pkgs.fcitx-engines; [ mozc unikey ];
-      fcitx5.addons = with pkgs; [
-        fcitx5-mozc
-        fcitx5-unikey
-        libsForQt5.fcitx5-qt
-      ];
+      fcitx5 = {
+        plasma6Support = true;
+        addons = builtins.attrValues {
+          inherit (pkgs) fcitx5-mozc fcitx5-unikey;
+          fcitx5-qt = pkgs.libsForQt5.fcitx5-qt;
+        };
+      };
     };
   };
 
@@ -104,8 +116,10 @@
   hardware.bluetooth.powerOnBoot = true;
 
   # Configure keymap in X11
-  services.xserver.layout = "us";
-  services.xserver.xkbOptions = "eurosign:e";
+  services.xserver.xkb = {
+    layout = "us";
+    options = "eurosign:e";
+  };
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
