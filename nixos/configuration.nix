@@ -116,8 +116,10 @@
   hardware.bluetooth.powerOnBoot = true;
 
   # Configure keymap in X11
-  services.xserver.layout = "us";
-  services.xserver.xkbOptions = "eurosign:e";
+  services.xserver.xkb = {
+    layout = "us";
+    options = "eurosign:e";
+  };
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
