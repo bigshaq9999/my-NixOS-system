@@ -1,29 +1,33 @@
 {
-  description = "My NixOS Flake";
+  description = "My NixOS system configuration";
 
   inputs = {
-    # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/";
-
-    # Home manager
+    ## -- system modules --  ##
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # NixOS User Repository
+    nur.url = "github:nix-community/NUR";
+    ## -- system modules -- ##
+    
+    ## -- additional modules
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
+    ## -- additional modules
 
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
-    alejandra.inputs.nixpkgs.follows = "nixpkgs";
 
-    nur.url = "github:nix-community/NUR";
-
-    vscode-server.url = "github:nix-community/nixos-vscode-server";
-    vscode-server.inputs.nixpkgs.follows = "nixpkgs";
+    # vscode extensions set of packages(nixpkgs doesn't contain needed extensions)
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
-
+    # firefox addons set of packages
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-    firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Meanvoid - 2hu cursors
+    # @ashuramaruzxc/@meanvoid - Touhou Project and other anime-styled cursors
     meanvoid.url = "github:meanvoid/nixos-overlay";
+
+    # Redefinitions
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    alejandra.inputs.nixpkgs.follows = "nixpkgs";
+    vscode-server.inputs.nixpkgs.follows = "nixpkgs";
+    nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
+    firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
