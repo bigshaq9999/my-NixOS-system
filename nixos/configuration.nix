@@ -126,7 +126,6 @@
   users.users = {
     kunny = {
       isNormalUser = true;
-      openssh.authorizedKeys.keys = [ ];
       extraGroups = [
         "networkmanager"
         "wheel"
