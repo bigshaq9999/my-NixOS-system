@@ -6,8 +6,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   # You can import other NixOS modules here
   imports = [
     ./hardware-configuration.nix
@@ -19,7 +18,7 @@
   ];
 
   nixpkgs = {
-    overlays = [ ];
+    overlays = [];
     config = {
       allowUnfree = true;
     };
@@ -27,17 +26,19 @@
 
   # This will add each flake input as a registry
   # To make nix3 commands consistent with your flake
-  nix.registry = (lib.mapAttrs (_: flake: { inherit flake; })) (
+  nix.registry = (lib.mapAttrs (_: flake: {inherit flake;})) (
     (lib.filterAttrs (_: lib.isType "flake")) inputs
   );
 
   # This will additionally add your inputs to the system's legacy channels
   # Making legacy nix commands consistent as well, awesome!
-  nix.nixPath = [ "/etc/nix/path" ];
-  environment.etc = lib.mapAttrs' (name: value: {
-    name = "nix/path/${name}";
-    value.source = value.flake;
-  }) config.nix.registry;
+  nix.nixPath = ["/etc/nix/path"];
+  environment.etc =
+    lib.mapAttrs' (name: value: {
+      name = "nix/path/${name}";
+      value.source = value.flake;
+    })
+    config.nix.registry;
 
   nix.settings = {
     # Enable flakes and new 'nix' command
@@ -61,7 +62,7 @@
   networking.hostName = "nixos";
   networking.networkmanager = {
     enable = true;
-    plugins = builtins.attrValues { inherit (pkgs) networkmanager-openvpn; };
+    plugins = builtins.attrValues {inherit (pkgs) networkmanager-openvpn;};
   };
 
   # Set your time zone.
@@ -73,24 +74,6 @@
     font = "Lat2-Terminus16";
     keyMap = "us";
   };
-
-  # Fonts
-  fonts.packages = builtins.attrValues {
-    inherit (pkgs)
-      comic-mono
-      hack-font
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
-      ;
-    nerdfonts = pkgs.nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "DroidSansMono"
-      ];
-    };
-  };
-  fonts.fontDir.enable = true;
 
   # Bluetooth
   hardware.bluetooth.enable = true;
@@ -126,7 +109,7 @@
   users.users = {
     kunny = {
       isNormalUser = true;
-      openssh.authorizedKeys.keys = [ ];
+      openssh.authorizedKeys.keys = [];
       extraGroups = [
         "networkmanager"
         "wheel"
