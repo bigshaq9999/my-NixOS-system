@@ -16,7 +16,7 @@ in {
 
     bbenoist-nix = vscode-marketplace.bbenoist.nix;
     nix-ide = vscode-marketplace.jnoortheen.nix-ide;
-    kamadorueda-alejandra = vscode-marketplace.kamadorueda.alejandra;
+    brettm12345-nixfmt-vscode = vscode-marketplace.brettm12345.nixfmt-vscode;
 
     python = vscode-marketplace.ms-python.python;
     vscode-pylance = vscode-marketplace.ms-python.vscode-pylance;
