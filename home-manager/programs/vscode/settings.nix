@@ -42,12 +42,11 @@ _: {
     };
 
     "[nix]" = {
-      "editor.defaultFormatter" = "kamadorueda.alejandra";
+      "editor.defaultFormatter" = "brettm12345.nixfmt-vscode";
       "editor.formatOnPaste" = true;
       "editor.formatOnSave" = true;
       "editor.formatOnType" = false;
     };
-    "alejandra.program" = "alejandra";
 
     "github.copilot.enable" = {
       "*" = true;
