@@ -5,24 +5,29 @@
   nur,
   home-manager,
   ...
-}: let
+}:
+let
   system = "x86_64-linux";
-  specialArgs = {inherit inputs;};
+  specialArgs = {
+    inherit inputs;
+  };
   modules = [
     # > Our main NixOS configuration file <
     ./configuration.nix
 
     nur.nixosModules.nur
 
-    {nixpkgs.overlays = [nur.overlay];}
-    ({pkgs, ...}: let
-      nur-no-pkgs = import nur {
-        nurpkgs = import nixpkgs {system = "x86_64-linux";};
-      };
-    in {
-      imports = [nur-no-pkgs.repos.iopq.modules.xraya];
-      services.xraya.enable = true;
-    })
+    { nixpkgs.overlays = [ nur.overlay ]; }
+    (
+      { pkgs, ... }:
+      let
+        nur-no-pkgs = import nur { nurpkgs = import nixpkgs { system = "x86_64-linux"; }; };
+      in
+      {
+        imports = [ nur-no-pkgs.repos.iopq.modules.xraya ];
+        services.xraya.enable = true;
+      }
+    )
 
     home-manager.nixosModules.home-manager
     {
@@ -30,11 +35,14 @@
         useGlobalPkgs = true;
         useUserPackages = true;
         users.kunny = import ../home-manager/home.nix;
-        extraSpecialArgs = {inherit inputs outputs system;};
+        extraSpecialArgs = {
+          inherit inputs outputs system;
+        };
       };
     }
   ];
-in {
+in
+{
   kunny = inputs.nixpkgs.lib.nixosSystem {
     inherit system;
     inherit specialArgs;
