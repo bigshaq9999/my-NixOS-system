@@ -1,15 +1,11 @@
+{ pkgs, inputs, ... }:
 {
-  pkgs,
-  inputs,
-  ...
-}: {
   programs.firefox = {
     enable = true;
     profiles.main = {
       isDefault = true;
       extensions = builtins.attrValues {
-        inherit
-          (inputs.firefox-addons.packages.${pkgs.system})
+        inherit (inputs.firefox-addons.packages.${pkgs.system})
           ublock-origin
           tree-style-tab
           sponsorblock

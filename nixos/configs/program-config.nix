@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.htop.enable = true;
   programs.nano.syntaxHighlight = true;
 
