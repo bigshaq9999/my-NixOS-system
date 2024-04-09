@@ -1,11 +1,15 @@
+{ pkgs, inputs, ... }:
+let
+  inherit
+    (inputs.nix-vscode-extensions.extensions.${pkgs.system}.forVSCodeVersion pkgs.vscode.version)
+    vscode-marketplace
+    ;
+  inherit
+    (inputs.nix-vscode-extensions.extensions.${pkgs.system}.forVSCodeVersion pkgs.vscode.version)
+    vscode-marketplace-release
+    ;
+in
 {
-  pkgs,
-  inputs,
-  ...
-}: let
-  inherit (inputs.nix-vscode-extensions.extensions.${pkgs.system}.forVSCodeVersion pkgs.vscode.version) vscode-marketplace;
-  inherit (inputs.nix-vscode-extensions.extensions.${pkgs.system}.forVSCodeVersion pkgs.vscode.version) vscode-marketplace-release;
-in {
   programs.vscode.extensions = builtins.attrValues {
     vscode-remote-extensionpack = vscode-marketplace.ms-vscode-remote.vscode-remote-extensionpack;
     vscode-icons = vscode-marketplace.vscode-icons-team.vscode-icons;
@@ -16,7 +20,7 @@ in {
 
     bbenoist-nix = vscode-marketplace.bbenoist.nix;
     nix-ide = vscode-marketplace.jnoortheen.nix-ide;
-    kamadorueda-alejandra = vscode-marketplace.kamadorueda.alejandra;
+    brettm12345-nixfmt-vscode = vscode-marketplace.brettm12345.nixfmt-vscode;
 
     python = vscode-marketplace.ms-python.python;
     vscode-pylance = vscode-marketplace.ms-python.vscode-pylance;

@@ -6,7 +6,7 @@ _: {
     "editor.fontSize" = 16;
     "editor.cursorSurroundingLines" = 6;
     "editor.fontFamily" = "'Comic Mono', 'monospace', monospace";
-    "editor.rulers" = [80];
+    "editor.rulers" = [ 80 ];
     "editor.minimap.enabled" = false;
     "editor.mouseWheelZoom" = true;
     "editor.guides.bracketPairs" = "active";
@@ -42,12 +42,11 @@ _: {
     };
 
     "[nix]" = {
-      "editor.defaultFormatter" = "kamadorueda.alejandra";
+      "editor.defaultFormatter" = "brettm12345.nixfmt-vscode";
       "editor.formatOnPaste" = true;
       "editor.formatOnSave" = true;
       "editor.formatOnType" = false;
     };
-    "alejandra.program" = "alejandra";
 
     "github.copilot.enable" = {
       "*" = true;
