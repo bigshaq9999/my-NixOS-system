@@ -13,8 +13,6 @@
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     ## -- additional modules
 
-    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
-
     # vscode extensions set of packages(nixpkgs doesn't contain needed extensions)
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # firefox addons set of packages
@@ -24,7 +22,6 @@
 
     # Redefinitions
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    alejandra.inputs.nixpkgs.follows = "nixpkgs";
     vscode-server.inputs.nixpkgs.follows = "nixpkgs";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
     firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +33,6 @@
     home-manager,
     flake-utils,
     nur,
-    alejandra,
     vscode-server,
     nix-vscode-extensions,
     meanvoid,
