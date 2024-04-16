@@ -2,7 +2,7 @@ _: {
   services = {
     xserver = {
       enable = true;
-      isplayManager.defaultSession = "plasmawayland";
+      displayManager.defaultSession = "plasma-wayland";
       displayManager.sddm.enable = true;
       desktopManager.plasma5.enable = true;
     };
