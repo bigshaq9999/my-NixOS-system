@@ -49,6 +49,6 @@ in {
     gruvbox = vscode-marketplace.jdinhlife.gruvbox;
 
     copilot = vscode-marketplace-release.github.copilot;
-    copilot-chat = vscode-marketplace-release.github.copilot-chat;
+    #copilot-chat = vscode-marketplace-release.github.copilot-chat;
   };
 }

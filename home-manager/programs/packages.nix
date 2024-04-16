@@ -99,7 +99,8 @@
       treesheets
       teamviewer
       brave
-      microsoft-edge
+      # microsoft-edge
+      
       obs-studio
       gimp
       bitwarden
