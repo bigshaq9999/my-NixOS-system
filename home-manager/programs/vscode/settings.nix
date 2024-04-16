@@ -1,12 +1,12 @@
 _: {
-  progrmas.vscode.userSettings = {
+  programs.vscode.userSettings = {
     "zenMode.fullScreen" = false;
     "zenMode.hideLineNumbers" = false;
 
     "editor.fontSize" = 16;
     "editor.cursorSurroundingLines" = 6;
     "editor.fontFamily" = "'Comic Mono', 'monospace', monospace";
-    "editor.rulers" = [ 80 ];
+    "editor.rulers" = [80];
     "editor.minimap.enabled" = false;
     "editor.mouseWheelZoom" = true;
     "editor.guides.bracketPairs" = "active";
