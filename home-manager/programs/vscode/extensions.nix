@@ -1,5 +1,8 @@
-{ pkgs, inputs, ... }:
-let
+{
+  pkgs,
+  inputs,
+  ...
+}: let
   inherit
     (inputs.nix-vscode-extensions.extensions.${pkgs.system}.forVSCodeVersion pkgs.vscode.version)
     vscode-marketplace
@@ -8,8 +11,7 @@ let
     (inputs.nix-vscode-extensions.extensions.${pkgs.system}.forVSCodeVersion pkgs.vscode.version)
     vscode-marketplace-release
     ;
-in
-{
+in {
   programs.vscode.extensions = builtins.attrValues {
     vscode-remote-extensionpack = vscode-marketplace.ms-vscode-remote.vscode-remote-extensionpack;
     vscode-icons = vscode-marketplace.vscode-icons-team.vscode-icons;
@@ -31,7 +33,7 @@ in
     steoates-autoimport = vscode-marketplace.steoates.autoimport;
     vscode-eslint = vscode-marketplace.dbaeumer.vscode-eslint;
 
-    davidanson-c = vscode-marketplace.davidanson.c;
+    vscode-markdownlint = vscode-marketplace.davidanson.vscode-markdownlint;
     latex-workshop = vscode-marketplace.james-yu.latex-workshop;
     vscode-xml = vscode-marketplace.redhat.vscode-xml;
     jsoncrack-vscode = vscode-marketplace.aykutsarac.jsoncrack-vscode;
