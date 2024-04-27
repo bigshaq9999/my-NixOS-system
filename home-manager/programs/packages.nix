@@ -26,7 +26,7 @@
       git
       # videos
       
-      ffmpeg_5
+      ffmpeg_6-full
       mpv
       vlc
       # Social
