@@ -19,6 +19,8 @@
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     # @ashuramaruzxc/@meanvoid - Touhou Project and other anime-styled cursors
     meanvoid.url = "github:meanvoid/nixos-overlay";
+    # @donteatoreo - dis is a simple tool to compress videos 
+    dis.url = "github:DontEatOreo/dis";
 
     # Redefinitions
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -36,6 +38,7 @@
       vscode-server,
       nix-vscode-extensions,
       meanvoid,
+      dis,
       ...
     }@inputs:
     let
