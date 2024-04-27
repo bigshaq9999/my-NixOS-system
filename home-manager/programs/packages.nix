@@ -1,9 +1,10 @@
-{pkgs, ...}: {
+{ pkgs, inputs, ... }:
+{
   home.packages = builtins.attrValues {
-    inherit
-      (pkgs)
-      # CLI
-      
+    # CLI
+    dis = inputs.dis.packages.${pkgs.system}.default;
+    inherit (pkgs)
+
       eza
       tldr
       tree
@@ -20,43 +21,44 @@
       xclip
       bat
       pandoc
+      hugo
+      nixfmt-rfc-style
+      octaveFull
       # Programming
-      
+
       github-cli
       git
       # videos
-      
+
       ffmpeg_6-full
       mpv
       vlc
       # Social
-      
+
       thunderbird
       tdesktop
       nheko
       vesktop
       # Sound
-      
+
       pavucontrol
       qpwgraph
       # torrent
-      
+
       qbittorrent
       ;
 
     # windows
     wineWow-stable = pkgs.wineWowPackages.stable;
-    inherit
-      (pkgs)
+    inherit (pkgs)
       winetricks
       # educational
-      
+
       onlyoffice-bin
       zoom-us
       ;
     tex = pkgs.texlive.combine {
-      inherit
-        (pkgs.texlive)
+      inherit (pkgs.texlive)
         scheme-tetex
         latexmk
         enumitem
@@ -70,10 +72,9 @@
     };
     inherit (pkgs) gImageReader;
     okular = pkgs.libsForQt5.okular;
-    inherit
-      (pkgs)
+    inherit (pkgs)
       # obsidian
-      
+
       anki-bin
       ;
 
@@ -82,21 +83,20 @@
     ark = pkgs.libsForQt5.ark;
     kolourpaint = pkgs.libsForQt5.kolourpaint;
 
-    inherit
-      (pkgs)
+    inherit (pkgs)
       # other
-      
+
       treesheets
       teamviewer
       brave
       # microsoft-edge
-      
+
       obs-studio
       gimp
       bitwarden
       tor-browser-bundle-bin
       # network
-      
+
       riseup-vpn
       calyx-vpn
       networkmanager-openvpn
