@@ -1,8 +1,5 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: let
+{ pkgs, inputs, ... }:
+let
   inherit
     (inputs.nix-vscode-extensions.extensions.${pkgs.system}.forVSCodeVersion pkgs.vscode.version)
     vscode-marketplace
@@ -11,7 +8,8 @@
     (inputs.nix-vscode-extensions.extensions.${pkgs.system}.forVSCodeVersion pkgs.vscode.version)
     vscode-marketplace-release
     ;
-in {
+in
+{
   programs.vscode.extensions = builtins.attrValues {
     vscode-remote-extensionpack = vscode-marketplace.ms-vscode-remote.vscode-remote-extensionpack;
     vscode-icons = vscode-marketplace.vscode-icons-team.vscode-icons;
