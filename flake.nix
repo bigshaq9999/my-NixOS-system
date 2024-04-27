@@ -32,7 +32,6 @@
       self,
       nixpkgs,
       home-manager,
-      flake-utils,
       nur,
       vscode-server,
       nix-vscode-extensions,
