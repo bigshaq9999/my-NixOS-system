@@ -24,6 +24,7 @@ in {
     nix-ide = vscode-marketplace.jnoortheen.nix-ide;
     brettm12345-nixfmt-vscode = vscode-marketplace.brettm12345.nixfmt-vscode;
 
+    direnv = vscode-marketplace.mkhl.direnv;
     python = vscode-marketplace.ms-python.python;
     vscode-pylance = vscode-marketplace.ms-python.vscode-pylance;
     jupyter = vscode-marketplace.ms-toolsai.jupyter;

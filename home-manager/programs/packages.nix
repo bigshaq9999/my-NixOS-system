@@ -24,16 +24,6 @@
       
       github-cli
       git
-      python310
-      #gcc
-      
-      clang_12
-      clang-tools_12
-      cmake
-      # SDK
-      
-      nodejs
-      openjdk
       # videos
       
       ffmpeg_5
