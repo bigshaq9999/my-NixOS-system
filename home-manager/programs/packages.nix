@@ -28,6 +28,7 @@
 
       github-cli
       git
+      gitui
       # videos
 
       ffmpeg_6-full
