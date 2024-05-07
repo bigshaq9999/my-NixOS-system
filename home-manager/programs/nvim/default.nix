@@ -17,7 +17,6 @@
       inherit (pkgs.vimPlugins)
         lightline-vim
         vim-markdown
-        gruvbox
         vim-nix
         vimtex
         auto-pairs

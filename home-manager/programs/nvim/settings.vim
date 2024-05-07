@@ -17,7 +17,6 @@ set noswapfile
 set cursorline
 set cursorlineopt=number
 set clipboard+=unnamed,unnamedplus
-colorscheme gruvbox
 set expandtab
 set smartcase
 set incsearch
