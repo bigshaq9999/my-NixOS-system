@@ -139,6 +139,9 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
+  # Docker 
+  virtualisation.docker.enable = true;
+
   services.flatpak.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
