@@ -1,4 +1,5 @@
-{config, ...}: {
+{ config, ... }:
+{
   networking.extraHosts = ''
     127.0.0.1 krunker.io   www.krunker.io
     127.0.0.1 paper-io.com www.paper-io.com

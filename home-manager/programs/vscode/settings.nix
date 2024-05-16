@@ -34,9 +34,13 @@ _: {
 
     "codium.enabled" = true;
 
-    "[python]" = { "editor.formatOnType" = true; };
+    "[python]" = {
+      "editor.formatOnType" = true;
+    };
 
-    "[html]" = { "editor.defaultFormatter" = "vscode.html-language-features"; };
+    "[html]" = {
+      "editor.defaultFormatter" = "vscode.html-language-features";
+    };
 
     "[nix]" = {
       "editor.defaultFormatter" = "brettm12345.nixfmt-vscode";
