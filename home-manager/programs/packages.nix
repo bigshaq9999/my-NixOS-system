@@ -53,21 +53,6 @@
     # Educational
     inherit (pkgs) onlyoffice-bin zoom-us;
 
-    # TeX
-    tex = pkgs.texlive.combine {
-      inherit (pkgs.texlive)
-        ebgaramond
-        enumitem
-        fontaxes
-        latexmk
-        lastpage
-        microtype
-        scheme-tetex
-        titlesec
-        was
-        ;
-    };
-
     # KDE Plasma
     inherit (pkgs.libsForQt5)
       ark
