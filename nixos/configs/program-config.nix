@@ -2,7 +2,10 @@
 {
   users.defaultUserShell = pkgs.zsh;
   programs = {
-    nano.syntaxHighlight = true;
+    nano = {
+      enable = true;
+      syntaxHighlight = true;
+    };
     zsh.enable = true;
     dconf.enable = true;
   };
