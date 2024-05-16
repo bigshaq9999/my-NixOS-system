@@ -42,8 +42,9 @@ _: {
       "editor.defaultFormatter" = "vscode.html-language-features";
     };
 
+    "alejandra.program" = "nixfmt";
     "[nix]" = {
-      "editor.defaultFormatter" = "brettm12345.nixfmt-vscode";
+      "editor.defaultFormatter" = "kamadorueda.alejandra";
       "editor.formatOnPaste" = true;
       "editor.formatOnSave" = true;
       "editor.formatOnType" = false;

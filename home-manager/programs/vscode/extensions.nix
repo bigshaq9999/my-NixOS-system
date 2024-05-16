@@ -31,7 +31,7 @@ in
     # Nix
     bbenoist-nix = vscode-marketplace.bbenoist.nix;
     nix-ide = vscode-marketplace.jnoortheen.nix-ide;
-    brettm12345-nixfmt-vscode = vscode-marketplace.brettm12345.nixfmt-vscode;
+    alejandra = vscode-marketplace.kamadorueda.alejandra;
 
     # Python
     python = vscode-marketplace.ms-python.python;
