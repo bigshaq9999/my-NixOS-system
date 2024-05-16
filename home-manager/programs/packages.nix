@@ -3,104 +3,92 @@
   home.packages = builtins.attrValues {
     # CLI
     dis = inputs.dis.packages.${pkgs.system}.default;
-    inherit (pkgs)
 
-      eza
-      tldr
-      tree
-      steam-run
+    inherit (pkgs)
       appimage-run
-      neofetch
-      unzip
-      zip
-      yt-dlp
-      imagemagick
-      duf
-      rar
-      pdftk
-      xclip
       bat
-      pandoc
+      duf
+      eza
       hugo
+      imagemagick
+      neofetch
       nixfmt-rfc-style
       octaveFull
-      # Programming
-
-      github-cli
-      git
-      gitui
-      # videos
-
-      ffmpeg_6-full
-      mpv
-      vlc
-      # Social
-
-      thunderbird
-      tdesktop
-      nheko
-      vesktop
-      # Sound
-
-      pavucontrol
-      qpwgraph
-      # torrent
-
-      qbittorrent
+      pandoc
+      pdftk
+      rar
+      steam-run
+      tldr
+      tree
+      unzip
+      xclip
+      yt-dlp
+      zip
       ;
 
-    # windows
-    wineWow-stable = pkgs.wineWowPackages.stable;
+    # Programming
+    inherit (pkgs) git github-cli gitui;
+
+    # Videos
+    inherit (pkgs) ffmpeg_6-full mpv vlc;
+
+    # Social
     inherit (pkgs)
-      winetricks
-      # educational
-
-      onlyoffice-bin
-      zoom-us
+      nheko
+      tdesktop
+      thunderbird
+      vesktop
       ;
+
+    # Sound
+    inherit (pkgs) pavucontrol qpwgraph;
+
+    # Torrent
+    inherit (pkgs) qbittorrent;
+
+    # Windows
+    wineWow-stable = pkgs.wineWowPackages.stable;
+    inherit (pkgs) winetricks;
+
+    # Educational
+    inherit (pkgs) onlyoffice-bin zoom-us;
+
+    # TeX
     tex = pkgs.texlive.combine {
       inherit (pkgs.texlive)
-        scheme-tetex
-        latexmk
-        enumitem
-        was
-        lastpage
-        titlesec
         ebgaramond
-        microtype
+        enumitem
         fontaxes
+        latexmk
+        lastpage
+        microtype
+        scheme-tetex
+        titlesec
+        was
         ;
     };
-    inherit (pkgs) gImageReader;
-    okular = pkgs.libsForQt5.okular;
-    inherit (pkgs)
-      # obsidian
 
-      anki-bin
+    # KDE Plasma
+    inherit (pkgs.libsForQt5)
+      ark
+      kcalc
+      kolourpaint
+      okular
       ;
 
-    # kde plasma
-    kcalc = pkgs.libsForQt5.kcalc;
-    ark = pkgs.libsForQt5.ark;
-    kolourpaint = pkgs.libsForQt5.kolourpaint;
-
     inherit (pkgs)
-      # other
-
-      treesheets
-      teamviewer
-      brave
-      # microsoft-edge
-
-      obs-studio
-      gimp
+      anki-bin
       bitwarden
-      tor-browser-bundle-bin
-      # network
-
-      riseup-vpn
+      brave
       calyx-vpn
+      gImageReader
+      gimp
       networkmanager-openvpn
+      obs-studio
+      teamviewer
+      tor-browser-bundle-bin
+      treesheets
+      riseup-vpn
       ;
   };
 }
