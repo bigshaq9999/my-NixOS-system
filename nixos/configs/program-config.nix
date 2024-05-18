@@ -1,11 +1,12 @@
 { pkgs, ... }:
 {
-  programs.htop.enable = true;
-  programs.nano.syntaxHighlight = true;
-
-  # zsh
-  programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
-
-  programs.dconf.enable = true;
+  programs = {
+    nano = {
+      enable = true;
+      syntaxHighlight = true;
+    };
+    zsh.enable = true;
+    dconf.enable = true;
+  };
 }

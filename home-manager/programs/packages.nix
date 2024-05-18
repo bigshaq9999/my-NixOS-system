@@ -3,104 +3,77 @@
   home.packages = builtins.attrValues {
     # CLI
     dis = inputs.dis.packages.${pkgs.system}.default;
-    inherit (pkgs)
 
-      eza
-      tldr
-      tree
-      steam-run
+    inherit (pkgs)
       appimage-run
-      neofetch
-      unzip
-      zip
-      yt-dlp
-      imagemagick
-      duf
-      rar
-      pdftk
-      xclip
       bat
-      pandoc
+      duf
+      eza
       hugo
+      imagemagick
+      neofetch
       nixfmt-rfc-style
       octaveFull
-      # Programming
+      pandoc
+      pdftk
+      rar
+      steam-run
+      tldr
+      tree
+      unzip
+      xclip
+      yt-dlp
+      zip
+      ;
 
-      github-cli
-      git
-      gitui
-      # videos
+    # Programming
+    inherit (pkgs) git github-cli gitui;
 
-      ffmpeg_6-full
-      mpv
-      vlc
-      # Social
+    # Videos
+    inherit (pkgs) ffmpeg_6-full mpv vlc;
 
-      thunderbird
-      tdesktop
+    # Social
+    inherit (pkgs)
       nheko
+      tdesktop
+      thunderbird
       vesktop
-      # Sound
-
-      pavucontrol
-      qpwgraph
-      # torrent
-
-      qbittorrent
       ;
 
-    # windows
+    # Sound
+    inherit (pkgs) pavucontrol qpwgraph;
+
+    # Torrent
+    inherit (pkgs) qbittorrent;
+
+    # Windows
     wineWow-stable = pkgs.wineWowPackages.stable;
-    inherit (pkgs)
-      winetricks
-      # educational
+    inherit (pkgs) winetricks;
 
-      onlyoffice-bin
-      zoom-us
+    # Educational
+    inherit (pkgs) onlyoffice-bin zoom-us;
+
+    # KDE Plasma
+    inherit (pkgs.libsForQt5)
+      ark
+      kcalc
+      kolourpaint
+      okular
       ;
-    tex = pkgs.texlive.combine {
-      inherit (pkgs.texlive)
-        scheme-tetex
-        latexmk
-        enumitem
-        was
-        lastpage
-        titlesec
-        ebgaramond
-        microtype
-        fontaxes
-        ;
-    };
-    inherit (pkgs) gImageReader;
-    okular = pkgs.libsForQt5.okular;
-    inherit (pkgs)
-      # obsidian
 
+    inherit (pkgs)
       anki-bin
-      ;
-
-    # kde plasma
-    kcalc = pkgs.libsForQt5.kcalc;
-    ark = pkgs.libsForQt5.ark;
-    kolourpaint = pkgs.libsForQt5.kolourpaint;
-
-    inherit (pkgs)
-      # other
-
-      treesheets
-      teamviewer
-      brave
-      # microsoft-edge
-
-      obs-studio
-      gimp
       bitwarden
-      tor-browser-bundle-bin
-      # network
-
-      riseup-vpn
+      brave
       calyx-vpn
+      gImageReader
+      gimp
       networkmanager-openvpn
+      obs-studio
+      teamviewer
+      tor-browser-bundle-bin
+      treesheets
+      riseup-vpn
       ;
   };
 }
