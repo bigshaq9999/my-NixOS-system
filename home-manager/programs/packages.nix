@@ -11,7 +11,6 @@
       eza
       hugo
       imagemagick
-      neofetch
       nixfmt-rfc-style
       octaveFull
       pandoc
