@@ -135,6 +135,11 @@
     };
   };
 
+  # gaming
+  programs.steam = {
+    enable = true;
+  };
+
   # Virt-manager
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
