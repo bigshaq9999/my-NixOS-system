@@ -2,6 +2,7 @@
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
   inputs,
+  outputs,
   lib,
   config,
   pkgs,
@@ -10,6 +11,7 @@
 {
   # You can import other NixOS modules here
   imports = [
+    inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
     ./configs/fonts.nix
     ./configs/input.nix
@@ -17,6 +19,16 @@
     ./configs/power.nix
     ./configs/program-config.nix
   ];
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      # Import your home-manager configuration
+      nanachi = import ../home-manager/home.nix;
+    };
+    backupFileExtension = "backup";
+  };
+
 
   nixpkgs = {
     overlays = [ ];
@@ -105,8 +117,8 @@
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
-
+  boot.initrd.luks.devices."luks-92b50b02-632d-47ab-9c84-a28c1d4ded01".device = "/dev/disk/by-uuid/92b50b02-632d-47ab-9c84-a28c1d4ded01";
+  
   # Enable sound.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -124,7 +136,7 @@
   services.libinput.enable = true;
 
   users.users = {
-    kunny = {
+    nanachi = {
       isNormalUser = true;
       extraGroups = [
         "networkmanager"
@@ -150,5 +162,5 @@
   services.flatpak.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.05";
+  system.stateVersion = "24.05";
 }
