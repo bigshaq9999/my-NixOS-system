@@ -12,7 +12,7 @@ _: {
       upgradenoswitch = "nixos-rebuild boot --use-remote-sudo";
       upgrade = "nixos-rebuild switch --use-remote-sudo";
       garbage = "sudo nix-collect-garbage --delete-older-than 14d";
-      todo = "vim /home/kunny/todo.md";
+      todo = "vim /home/nanachi/todo.md";
       cfg = "sudo vim /etc/nixos/";
       copydir = "pwd | xclip -selection clipboard";
       gpp = "c++ -Wall -Weffc++ -Wextra -Wsign-conversion -pedantic-errors -Werror";
