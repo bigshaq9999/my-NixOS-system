@@ -53,12 +53,7 @@
     inherit (pkgs) onlyoffice-bin zoom-us;
 
     # KDE Plasma
-    inherit (pkgs.libsForQt5)
-      ark
-      kcalc
-      kolourpaint
-      okular
-      ;
+    inherit (pkgs.libsForQt5) ark kolourpaint okular;
 
     inherit (pkgs)
       anki-bin
@@ -69,8 +64,6 @@
       gimp
       networkmanager-openvpn
       obs-studio
-      teamviewer
-      tor-browser-bundle-bin
       treesheets
       riseup-vpn
       ;
