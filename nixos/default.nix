@@ -34,7 +34,7 @@ let
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        users.kunny = import ../home-manager/home.nix;
+        users.nanachi = import ../home-manager/home.nix;
         extraSpecialArgs = {
           inherit inputs outputs system;
         };
@@ -43,7 +43,7 @@ let
   ];
 in
 {
-  kunny = inputs.nixpkgs.lib.nixosSystem {
+  nanachi = inputs.nixpkgs.lib.nixosSystem {
     inherit system;
     inherit specialArgs;
     inherit modules;
