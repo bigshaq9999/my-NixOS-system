@@ -9,7 +9,6 @@ _: {
     ./programs/chromium.nix
     ./programs/direnv.nix
     ./programs/firefox.nix
-    ./programs/kde-connect.nix
     ./programs/packages.nix
     ./programs/zsh.nix
   ];
