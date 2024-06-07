@@ -4,7 +4,7 @@ _: {
     "zenMode.hideLineNumbers" = false;
 
     "editor.fontSize" = 16;
-    "editor.fontFamily" = "'FiraCode Nerd Font Mono'";
+    "editor.fontFamily" = "'FiraCode Nerd Font'";
     "editor.fontLigatures" = true;
     "editor.cursorSurroundingLines" = 6;
     "editor.rulers" = [ 80 ];
@@ -17,12 +17,12 @@ _: {
 
     "debug.console.fontSize" = 16;
     "security.workspace.trust.untrustedFiles" = "open";
-    "terminal.integrated.fontFamily" = "Firacode Nerd Font Mono Med";
+    "terminal.integrated.fontFamily" = "Firacode Nerd Font";
     "window.menuBarVisibility" = "toggle";
     "window.zoomLevel" = 0.75;
     "workbench.sideBar.location" = "right";
 
-    "workbench.colorTheme" = "Gruvbox Dark Medium";
+    "workbench.colorTheme" = "Solarized Light";
 
     "latex-workshop.latex.autoBuild.run" = "never";
 
