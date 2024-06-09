@@ -9,10 +9,6 @@
     nur.url = "github:nix-community/NUR";
     ## -- system modules -- ##
 
-    ## -- additional modules
-    vscode-server.url = "github:nix-community/nixos-vscode-server";
-    ## -- additional modules
-
     # vscode extensions set of packages(nixpkgs doesn't contain needed extensions)
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     # firefox addons set of packages
@@ -24,9 +20,7 @@
 
     # Redefinitions
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    vscode-server.inputs.nixpkgs.follows = "nixpkgs";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
-    firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -35,29 +29,25 @@
       nixpkgs,
       home-manager,
       nur,
-      vscode-server,
       nix-vscode-extensions,
       meanvoid,
       dis,
       ...
     }@inputs:
     let
-      inherit (self) outputs;
+      commonAttrs = {
+        inherit self;
+        inherit inputs;
+        inherit (self) outputs;
+        inherit nixpkgs;
+        inherit (nixpkgs) lib;
+        inherit home-manager;
+        inherit nur;
+        inherit nix-vscode-extensions;
+        inherit (dis) dis;
+      };
     in
     {
-      # NixOS configuration entrypoint
-      # Available through 'nixos-rebuild --flake .#your-hostname'
-      nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs;
-          };
-          # > Our main nixos configuration file <
-          modules = [ ./nixos/configuration.nix ];
-        };
-      };
-
-      # Standalone home-manager configuration entrypoint
-      # Available through 'home-manager --flake .#your-username@your-hostname'
+      nixosConfigurations = import ./nixos commonAttrs;
     };
 }
