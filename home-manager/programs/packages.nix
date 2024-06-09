@@ -37,6 +37,7 @@
       tdesktop
       thunderbird
       vesktop
+      signal-desktop
       ;
 
     # Sound
@@ -63,6 +64,7 @@
       gImageReader
       gimp
       networkmanager-openvpn
+      mullvad-vpn
       obs-studio
       treesheets
       riseup-vpn
