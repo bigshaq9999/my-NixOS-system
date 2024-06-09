@@ -20,16 +20,6 @@
     ./configs/program-config.nix
   ];
 
-  home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
-    users = {
-      # Import your home-manager configuration
-      nanachi = import ../home-manager/home.nix;
-    };
-    backupFileExtension = "backup";
-  };
-
-
   nixpkgs = {
     overlays = [ ];
     config = {
@@ -118,7 +108,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.luks.devices."luks-92b50b02-632d-47ab-9c84-a28c1d4ded01".device = "/dev/disk/by-uuid/92b50b02-632d-47ab-9c84-a28c1d4ded01";
-  
+
   # Enable sound.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
