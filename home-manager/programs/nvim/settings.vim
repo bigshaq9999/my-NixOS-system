@@ -3,7 +3,7 @@ filetype plugin on
 filetype indent on
 syntax on
 set nowrap
-set number
+set relativenumber
 set mouse=v
 set ignorecase
 set tabstop=4
@@ -26,3 +26,4 @@ set showmode
 set hlsearch
 set nocompatible
 set noshowmode
+colorscheme solarized8
