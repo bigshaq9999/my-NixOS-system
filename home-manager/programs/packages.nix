@@ -33,7 +33,7 @@
 
     # Social
     inherit (pkgs)
-      nheko
+      element-desktop
       tdesktop
       thunderbird
       vesktop
