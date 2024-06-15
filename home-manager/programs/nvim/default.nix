@@ -21,6 +21,7 @@
         vimtex
         auto-pairs
         vim-sensible
+        vim-solarized8
         ;
     };
     extraConfig = builtins.readFile ./settings.vim;
