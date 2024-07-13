@@ -51,7 +51,7 @@
     inherit (pkgs) winetricks;
 
     # Educational
-    inherit (pkgs) onlyoffice-bin zoom-us;
+    inherit (pkgs) libreoffice-qt-still zoom-us;
 
     # KDE Plasma
     inherit (pkgs.libsForQt5) ark kolourpaint okular;
