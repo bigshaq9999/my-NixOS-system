@@ -66,6 +66,12 @@
     plugins = builtins.attrValues { inherit (pkgs) networkmanager-openvpn; };
   };
 
+  # VPN
+  services.mullvad-vpn = {
+    enable = true;
+    package = pkgs.mullvad-vpn;
+  };
+
   # Set your time zone.
   time.timeZone = "Asia/Ho_Chi_Minh";
 
