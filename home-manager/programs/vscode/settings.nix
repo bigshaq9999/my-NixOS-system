@@ -14,6 +14,7 @@ _: {
     "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
     "security.workspace.trust.enabled" = false;
     "editor.accessibilitySupport" = "off";
+    "editor.lineNumbers" = "relative";
 
     "debug.console.fontSize" = 16;
     "security.workspace.trust.untrustedFiles" = "open";
