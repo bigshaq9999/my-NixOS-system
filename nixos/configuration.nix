@@ -56,9 +56,6 @@
     dates = "monthly";
   };
 
-  hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true;
-
   networking.hostName = "nixos";
   networking.networkmanager = {
     enable = true;
