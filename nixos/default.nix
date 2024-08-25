@@ -1,7 +1,6 @@
 {
   inputs,
   outputs,
-  nixpkgs,
   nur,
   home-manager,
   ...
