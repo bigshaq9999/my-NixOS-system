@@ -36,7 +36,6 @@
       element-desktop
       tdesktop
       thunderbird
-      vesktop
       signal-desktop
       ;
 
