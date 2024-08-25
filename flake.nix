@@ -36,20 +36,30 @@
       dis,
       ...
     }@inputs:
-    let
-      commonAttrs = {
-        inherit self;
-        inherit inputs;
-        inherit (self) outputs;
-        inherit nixpkgs;
-        inherit (nixpkgs) lib;
-        inherit home-manager;
-        inherit nur;
-        inherit nix-vscode-extensions;
-        inherit (dis) dis;
-      };
-    in
     {
-      nixosConfigurations = import ./nixos commonAttrs;
+      nixosConfigurations = {
+        nixos = inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./nixos/configuration.nix
+            nur.nixosModules.nur
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.nanachi = import ./home-manager/home.nix;
+                backupFileExtension = "backup";
+                extraSpecialArgs = {
+                  inherit inputs;
+                };
+              };
+            }
+          ];
+        };
+      };
     };
 }
