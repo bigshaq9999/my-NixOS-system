@@ -1,4 +1,5 @@
-_: {
+{ inputs, ... }:
+{
   imports = [
     ./programs/nvim/default.nix
 
@@ -8,8 +9,10 @@ _: {
 
     ./programs/chromium.nix
     ./programs/direnv.nix
+    ./programs/nixcord.nix
     ./programs/packages.nix
     ./programs/zsh.nix
+    inputs.nixcord.homeManagerModules.nixcord
   ];
 
   nixpkgs = {

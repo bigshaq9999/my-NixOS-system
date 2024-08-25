@@ -21,6 +21,8 @@
     # Redefinitions
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixcord.url = "github:kaylorben/nixcord";
   };
 
   outputs =
