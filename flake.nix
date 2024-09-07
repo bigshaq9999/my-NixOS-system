@@ -27,22 +27,47 @@
 
   outputs =
     inputs:
+    let
+      hostName = "nixos";
+      userName = "nanachi";
+    in
     {
       nixosConfigurations = {
-        nixos = inputs.nixpkgs.lib.nixosSystem {
+        ${hostName} = inputs.nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
           };
           modules = [
             ./nixos/configuration.nix
-            nur.nixosModules.nur
-            home-manager.nixosModules.home-manager
+            inputs.nur.nixosModules.nur
+            inputs.home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.nanachi = import ./home-manager/home.nix;
+                users.${userName} = {
+                  imports = [
+                    ./home-manager/programs/nvim/default.nix
+
+                    ./home-manager/programs/vscode/default.nix
+                    ./home-manager/programs/vscode/extensions.nix
+                    ./home-manager/programs/vscode/settings.nix
+
+                    ./home-manager/programs/chromium.nix
+                    ./home-manager/programs/direnv.nix
+                    ./home-manager/programs/nixcord.nix
+                    ./home-manager/programs/packages.nix
+                    ./home-manager/programs/zsh.nix
+                    ./home-manager/home.nix
+
+                    inputs.nixcord.homeManagerModules.nixcord
+                  ];
+
+                  home = {
+                    stateVersion = "24.05";
+                  };
+                };
                 backupFileExtension = "backup";
                 extraSpecialArgs = {
                   inherit inputs;
