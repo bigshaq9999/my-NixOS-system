@@ -26,16 +26,7 @@
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      nur,
-      nix-vscode-extensions,
-      meanvoid,
-      dis,
-      ...
-    }@inputs:
+    inputs:
     {
       nixosConfigurations = {
         nixos = inputs.nixpkgs.lib.nixosSystem {
