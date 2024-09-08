@@ -3,7 +3,7 @@ _: {
     "zenMode.fullScreen" = false;
     "zenMode.hideLineNumbers" = false;
 
-    "editor.fontSize" = 16;
+    "editor.fontSize" = 13;
     "editor.fontFamily" = "'FiraCode Nerd Font'";
     "editor.fontLigatures" = true;
     "editor.cursorSurroundingLines" = 6;
@@ -16,7 +16,7 @@ _: {
     "editor.accessibilitySupport" = "off";
     "editor.lineNumbers" = "relative";
 
-    "debug.console.fontSize" = 16;
+    "debug.console.fontSize" = 13;
     "security.workspace.trust.untrustedFiles" = "open";
     "terminal.integrated.fontFamily" = "Firacode Nerd Font";
     "window.menuBarVisibility" = "toggle";
