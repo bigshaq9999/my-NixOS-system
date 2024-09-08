@@ -32,20 +32,28 @@
           + "/share/fonts";
       };
 
-  fonts.packages = builtins.attrValues {
-    inherit (pkgs)
-      comic-mono
-      hack-font
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
-      ;
-    nerdfonts = pkgs.nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "DroidSansMono"
-      ];
+  fonts = {
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        monospace = [ "Hack" ];
+        emoji = [ "Twitter Color Emoji" ];
+      };
     };
+    packages = builtins.attrValues {
+      inherit (pkgs)
+        hack-font
+        noto-fonts
+        noto-fonts-cjk
+        noto-fonts-emoji
+        ;
+      nerdfonts = pkgs.nerdfonts.override {
+        fonts = [
+          "FiraCode"
+          "DroidSansMono"
+        ];
+      };
+    };
+    fontDir.enable = true;
   };
-  fonts.fontDir.enable = true;
 }
