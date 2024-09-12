@@ -34,9 +34,10 @@
     # Social
     inherit (pkgs)
       element-desktop
+      nchat
+      signal-desktop
       tdesktop
       thunderbird
-      signal-desktop
       ;
 
     # Sound
