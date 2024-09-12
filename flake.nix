@@ -56,6 +56,7 @@
 
                     ./home-manager/programs/chromium.nix
                     ./home-manager/programs/direnv.nix
+                    ./home-manager/programs/kitty.nix
                     ./home-manager/programs/nixcord.nix
                     ./home-manager/programs/packages.nix
                     ./home-manager/programs/zsh.nix
