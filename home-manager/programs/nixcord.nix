@@ -2,7 +2,6 @@ _: {
   programs.nixcord = {
     enable = true;
     openASAR.enable = true;
-    discord.enable = true;
     vesktop.enable = true;
     quickCss = builtins.readFile ./quickCSS.css;
     config = {
@@ -100,11 +99,9 @@ _: {
         startupTimings.enable = true;
         streamerModeOnStream.enable = true;
         summaries.enable = true;
-        superReactionTweaks.enable = true;
         textReplace.enable = true;
         themeAttributes.enable = true;
-        translate.enable = true;
-        typingIndicator.enable = true;
+        typingIndicator.enable = false;
         typingTweaks.enable = true;
         unindent.enable = true;
         unlockedAvatarZoom.enable = true;
