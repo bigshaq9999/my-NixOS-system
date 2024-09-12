@@ -36,7 +36,7 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = [ "Hack" ];
+        monospace = [ "FiraCode Nerd Mono" ];
         emoji = [ "Twitter Color Emoji" ];
       };
     };
