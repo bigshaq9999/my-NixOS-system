@@ -60,6 +60,7 @@
   networking.networkmanager = {
     enable = true;
     plugins = builtins.attrValues { inherit (pkgs) networkmanager-openvpn; };
+    wifi.powersave = true;
   };
 
   # VPN

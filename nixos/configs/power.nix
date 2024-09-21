@@ -1,4 +1,5 @@
 _: {
+  # TLP does not run when used with KDE or GNOME.
   services.power-profiles-daemon.enable = false;
   services.tlp = {
     enable = true;
@@ -14,6 +15,12 @@ _: {
 
       CPU_BOOST_ON_AC = 1;
       CPU_BOOST_ON_BAT = 0;
+
+      AMDGPU_ABM_LEVEL_ON_AC = 0;
+      AMDGPU_ABM_LEVEL_ON_BAT = 3;
+
+      WIFI_PWR_ON_AC = "off";
+      WIFI_PWR_ON_BAT = "on";
 
       CPU_MIN_PERF_ON_AC = 0;
       CPU_MAX_PERF_ON_AC = 100;
