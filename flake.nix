@@ -5,22 +5,19 @@
     ## -- system modules --  ##
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
     # NixOS User Repository
     nur.url = "github:nix-community/NUR";
     ## -- system modules -- ##
 
     # vscode extensions set of packages(nixpkgs doesn't contain needed extensions)
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    # firefox addons set of packages
-    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-    # @ashuramaruzxc/@meanvoid - Touhou Project and other anime-styled cursors
-    meanvoid.url = "github:meanvoid/nixos-overlay";
+    nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
+
     # @donteatoreo - dis is a simple tool to compress videos 
     dis.url = "github:DontEatOreo/dis";
-
-    # Redefinitions
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
+    dis.inputs.nixpkgs.follows = "nixpkgs";
 
     nixcord.url = "github:kaylorben/nixcord";
   };
@@ -40,7 +37,6 @@
           };
           modules = [
             ./nixos/configuration.nix
-            inputs.nur.nixosModules.nur
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager = {
@@ -54,6 +50,7 @@
                     ./home-manager/programs/vscode/extensions.nix
                     ./home-manager/programs/vscode/settings.nix
 
+                    ./home-manager/programs/firefox.nix
                     ./home-manager/programs/chromium.nix
                     ./home-manager/programs/direnv.nix
                     ./home-manager/programs/kitty.nix
@@ -63,13 +60,14 @@
                     ./home-manager/home.nix
 
                     inputs.nixcord.homeManagerModules.nixcord
+                    inputs.nur.nixosModules.nur
                   ];
 
                   home = {
                     stateVersion = "24.05";
                   };
                 };
-                backupFileExtension = "backup";
+                backupFileExtension = "backup1";
                 extraSpecialArgs = {
                   inherit inputs;
                 };
