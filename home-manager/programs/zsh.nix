@@ -8,13 +8,13 @@
     autocd = true;
     defaultKeymap = "emacs";
     shellAliases = {
-      ll = "ls -lah";
+      ll = "eza -lah";
       update = "nix-channel --update";
       upgradenoswitch = "nixos-rebuild boot --use-remote-sudo";
       upgrade = "nixos-rebuild switch --use-remote-sudo";
       garbage = "sudo nix-collect-garbage --delete-older-than 14d";
       todo = "vim /home/nanachi/todo.md";
-      cfg = "sudo vim /etc/nixos/";
+      cfg = "cd /etc/nixos && vi ./";
       copydir = "pwd | xclip -selection clipboard";
       gpp = "c++ -Wall -Weffc++ -Wextra -Wsign-conversion -pedantic-errors -Werror";
       gpp17 = "c++ -Wall -Weffc++ -Wextra -Wsign-conversion -pedantic-errors -Werror -std=c++17";
@@ -28,7 +28,6 @@
         "copybuffer"
         "copyfile"
       ];
-      theme = "lukerandall";
     };
     plugins = [
       {
