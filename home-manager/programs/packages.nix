@@ -26,7 +26,12 @@
       ;
 
     # Programming
-    inherit (pkgs) git github-cli gitui nil;
+    inherit (pkgs)
+      git
+      github-cli
+      gitui
+      nil
+      ;
 
     # Videos
     inherit (pkgs) ffmpeg_6-full mpv vlc;
