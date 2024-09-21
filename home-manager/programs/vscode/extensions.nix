@@ -15,8 +15,6 @@ in
     vscode-remote-extensionpack = vscode-marketplace.ms-vscode-remote.vscode-remote-extensionpack;
     vsliveshare = vscode-marketplace.ms-vsliveshare.vsliveshare;
     vscodeintellicode = vscode-marketplace.visualstudioexptteam.vscodeintellicode;
-    copilot = vscode-marketplace-release.github.copilot;
-    copilot-chat = vscode-marketplace-release.github.copilot-chat;
 
     # Language Specific
     # Bash
