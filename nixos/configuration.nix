@@ -162,9 +162,14 @@
   programs.virt-manager.enable = true;
 
   # Docker 
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
 
   services.flatpak.enable = true;
+
+  # Set default editor
+  environment.variables = {
+    EDITOR = "nvim";
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
