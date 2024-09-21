@@ -6,7 +6,6 @@ _: {
     quickCss = builtins.readFile ./quickCSS.css;
     config = {
       useQuickCss = true;
-      frameless = true;
       plugins = {
         betterGifPicker.enable = true;
         betterNotesBox.enable = true;
