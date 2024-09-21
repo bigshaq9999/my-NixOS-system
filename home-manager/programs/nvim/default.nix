@@ -2,28 +2,72 @@
 {
   programs.neovim = {
     enable = true;
-    viAlias = true;
+
     vimAlias = true;
-    defaultEditor = true;
+    viAlias = true;
+    vimdiffAlias = true;
+
     plugins = builtins.attrValues {
-      ale = {
-        plugin = pkgs.vimPlugins.ale;
-        config = "let g:ale_completion_enabled = 1";
+      nvim-treesitter = {
+        plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars);
       };
-      deoplete-nvim = {
-        plugin = pkgs.vimPlugins.deoplete-nvim;
-        config = "let g:deoplete#enable_at_startup = 1";
-      };
+
       inherit (pkgs.vimPlugins)
-        lightline-vim
-        vim-markdown
-        vim-nix
-        vimtex
-        auto-pairs
+        cmp-buffer
+        cmp-nvim-lsp
+        cmp-path
+        cmp-spell
+        cmp-treesitter
+        cmp-vsnip
+        friendly-snippets
+        gitsigns-nvim
+        indent-blankline-nvim
+        lspkind-nvim
+        lualine-nvim
+        mini-nvim
+        none-ls-nvim
+        nvim-autopairs
+        nvim-cmp
+        nvim-colorizer-lua
+        nvim-lspconfig
+        nvim-tree-lua
+        nvim-web-devicons
+        plenary-nvim
+        telescope-fzy-native-nvim
+        telescope-nvim
         vim-sensible
         vim-solarized8
+        vim-vsnip
+        which-key-nvim
         ;
     };
-    extraConfig = builtins.readFile ./settings.vim;
+
+    extraPackages = with pkgs; [
+      gcc
+      ripgrep
+      fd
+    ];
+
+    extraConfig =
+      let
+        luaRequire = module: builtins.readFile (builtins.toString ./config + "/${module}.lua");
+        luaConfig = builtins.concatStringsSep "\n" (
+          map luaRequire [
+            "filetree"
+            "init"
+            # "lspconfig"
+            "nvim-cmp"
+            "theming"
+            # "treesitter"
+            "utils"
+            "which-key"
+          ]
+        );
+      in
+      ''
+        lua << 
+        ${luaConfig}
+        
+      '';
   };
 }
