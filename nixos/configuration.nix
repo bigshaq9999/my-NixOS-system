@@ -10,7 +10,6 @@
 {
   # You can import other NixOS modules here
   imports = [
-    inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
     ./configs/fonts.nix
     ./configs/input.nix
