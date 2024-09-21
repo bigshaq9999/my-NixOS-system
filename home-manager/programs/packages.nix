@@ -68,11 +68,11 @@
       calyx-vpn
       gImageReader
       gimp
-      networkmanager-openvpn
       mullvad-vpn
+      networkmanager-openvpn
       obs-studio
-      treesheets
       riseup-vpn
+      treesheets
       ;
   };
 }
