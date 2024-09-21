@@ -48,7 +48,7 @@
       };
 
       extensions = builtins.attrValues {
-        inherit (inputs.firefox-addons.packages.${pkgs.system})
+        inherit (pkgs.nur.repos.rycee.firefox-addons)
           ublock-origin
           tree-style-tab
           sponsorblock
