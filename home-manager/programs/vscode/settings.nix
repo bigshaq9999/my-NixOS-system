@@ -23,7 +23,7 @@ _: {
     "window.zoomLevel" = 0.75;
     "workbench.sideBar.location" = "right";
 
-    "workbench.colorTheme" = "Solarized Light";
+    "workbench.colorTheme" = "Solarized Dark";
 
     "latex-workshop.latex.autoBuild.run" = "never";
 
