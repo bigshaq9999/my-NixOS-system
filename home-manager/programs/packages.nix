@@ -42,7 +42,7 @@
       nchat
       signal-desktop
       tdesktop
-      thunderbird
+      thunderbird-bin
       ;
 
     # Sound
