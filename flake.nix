@@ -20,6 +20,9 @@
     dis.inputs.nixpkgs.follows = "nixpkgs";
 
     nixcord.url = "github:kaylorben/nixcord";
+
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -44,7 +47,7 @@
                 useUserPackages = true;
                 users.${userName} = {
                   imports = [
-                    ./home-manager/programs/nvim/default.nix
+                    ./home-manager/programs/nixvim.nix
 
                     ./home-manager/programs/vscode/default.nix
                     ./home-manager/programs/vscode/extensions.nix
@@ -61,6 +64,7 @@
 
                     inputs.nixcord.homeManagerModules.nixcord
                     inputs.nur.nixosModules.nur
+                    inputs.nixvim.homeManagerModules.nixvim
                   ];
 
                   home = {
