@@ -7,6 +7,7 @@
       isDefault = true;
       settings = {
         "widget.use-xdg-desktop-portal.file-picker" = 1; # KDE file picker
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # userChrome.css
       };
 
       extensions = builtins.attrValues {
@@ -22,12 +23,14 @@
           ;
       };
 
+      userChrome = builtins.readFile ./userChrome.css;
     };
 
     profiles.work = {
       id = 1;
       settings = {
         "widget.use-xdg-desktop-portal.file-picker" = 1; # KDE file picker
+        "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # userChrome.css
       };
 
       extensions = builtins.attrValues {
@@ -40,6 +43,7 @@
           ;
       };
 
+      userChrome = builtins.readFile ./userChrome.css;
     };
 
     policies = {
