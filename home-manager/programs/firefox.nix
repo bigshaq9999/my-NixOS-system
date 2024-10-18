@@ -8,44 +8,6 @@
       settings = {
         "widget.use-xdg-desktop-portal.file-picker" = 1; # KDE file picker
       };
-      search.engines = {
-        "Nix Packages" = {
-          icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@np" ];
-          urls = [
-            {
-              template = "https://search.nixos.org/packages";
-              params = [
-                {
-                  name = "query";
-                  value = "{searchTerms}";
-                }
-              ];
-            }
-          ];
-        };
-
-        "Nix Options" = {
-          icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@no" ];
-          urls = [
-            {
-              template = "https://search.nixos.org/options";
-              params = [
-                {
-                  name = "query";
-                  value = "{searchTerms}";
-                }
-              ];
-            }
-          ];
-        };
-        "NixOS Wiki" = {
-          icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@nw" ];
-          urls = [ { template = "https://wiki.nixos.org/index.php?search={searchTerms}"; } ];
-        };
-      };
 
       extensions = builtins.attrValues {
         inherit (pkgs.nur.repos.rycee.firefox-addons)
@@ -56,9 +18,30 @@
           return-youtube-dislikes
           violentmonkey
           darkreader
+          vimium-ff
           ;
       };
+
     };
+
+    profiles.work = {
+      id = 1;
+      settings = {
+        "widget.use-xdg-desktop-portal.file-picker" = 1; # KDE file picker
+      };
+
+      extensions = builtins.attrValues {
+        inherit (pkgs.nur.repos.rycee.firefox-addons)
+          ublock-origin
+          tree-style-tab
+          sponsorblock
+          return-youtube-dislikes
+          vimium-ff
+          ;
+      };
+
+    };
+
     policies = {
       DisableTelemetry = true;
       OfferToSaveLogins = false;
