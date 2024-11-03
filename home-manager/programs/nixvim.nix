@@ -27,14 +27,14 @@
       number = true;
       relativenumber = true;
       scrolloff = 2;
-      shiftwidth = 8;
+      shiftwidth = 4;
       showcmd = true;
       showmatch = true;
       showmode = false;
       smartcase = true;
       smartindent = true;
       swapfile = false;
-      tabstop = 8;
+      tabstop = 4;
       termguicolors = true;
       timeoutlen = 0;
       wildmenu = true;
