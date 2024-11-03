@@ -12,8 +12,5 @@ _: {
 
       hide_window_decorations = "no";
     };
-    keybindings = {
-      "ctrl+b" = "select_tab";
-    };
   };
 }
