@@ -31,6 +31,8 @@
       github-cli
       gitui
       nil
+      sqlfluff
+      mycli
       ;
 
     # Videos
@@ -73,6 +75,7 @@
       obs-studio
       riseup-vpn
       treesheets
+      francis
       ;
   };
 }
