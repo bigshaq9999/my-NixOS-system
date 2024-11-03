@@ -78,24 +78,6 @@
     keyMap = "us";
   };
 
-  # Fonts
-  fonts.packages = builtins.attrValues {
-    inherit (pkgs)
-      comic-mono
-      hack-font
-      noto-fonts
-      noto-fonts-cjk
-      noto-fonts-emoji
-      ;
-    nerdfonts = pkgs.nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "DroidSansMono"
-      ];
-    };
-  };
-  fonts.fontDir.enable = true;
-
   # Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = false;
