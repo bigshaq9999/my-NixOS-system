@@ -19,7 +19,7 @@
           return-youtube-dislikes
           violentmonkey
           darkreader
-          vimium-ff
+          vimium-c
           ;
       };
 
@@ -39,7 +39,7 @@
           tree-style-tab
           sponsorblock
           return-youtube-dislikes
-          vimium-ff
+          vimium-c
           ;
       };
 
