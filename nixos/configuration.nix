@@ -145,6 +145,12 @@
   # Docker 
   # virtualisation.docker.enable = true;
 
+  # MySQL
+  services.mysql = {
+    enable = true;
+    package = pkgs.mysql84;
+  };
+
   services.flatpak.enable = true;
 
   # Set default editor
