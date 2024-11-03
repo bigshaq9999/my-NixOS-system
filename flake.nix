@@ -53,11 +53,11 @@
                     ./home-manager/programs/vscode/extensions.nix
                     ./home-manager/programs/vscode/settings.nix
 
-                    ./home-manager/programs/firefox.nix
+                    ./home-manager/programs/firefox/firefox.nix
+                    ./home-manager/programs/discord/nixcord.nix
                     ./home-manager/programs/chromium.nix
                     ./home-manager/programs/direnv.nix
                     ./home-manager/programs/kitty.nix
-                    ./home-manager/programs/nixcord.nix
                     ./home-manager/programs/packages.nix
                     ./home-manager/programs/zsh.nix
                     ./home-manager/home.nix
