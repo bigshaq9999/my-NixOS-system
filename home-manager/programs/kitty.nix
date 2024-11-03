@@ -3,7 +3,7 @@ _: {
     enable = true;
     shellIntegration.enableZshIntegration = true;
     font = {
-      name = "FiraCode Nerd Font Mono";
+      name = "Hack Nerd Font";
       size = 12;
     };
     theme = "Solarized Dark - Patched";
