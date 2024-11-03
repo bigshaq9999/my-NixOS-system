@@ -153,6 +153,8 @@
 
   services.flatpak.enable = true;
 
+  programs.htop.enable = true;
+
   # Set default editor
   environment.variables = {
     EDITOR = "nvim";
