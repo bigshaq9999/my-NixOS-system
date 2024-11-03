@@ -36,7 +36,7 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = [ "FiraCode Nerd Mono" ];
+        monospace = [ "Hack" ];
         emoji = [ "Twitter Color Emoji" ];
       };
     };
@@ -49,8 +49,7 @@
         ;
       nerdfonts = pkgs.nerdfonts.override {
         fonts = [
-          "FiraCode"
-          "DroidSansMono"
+          "Hack"
         ];
       };
     };
