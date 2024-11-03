@@ -133,7 +133,7 @@
     };
   };
 
-  # gaming
+  # Gaming
   programs.steam = {
     enable = true;
   };
