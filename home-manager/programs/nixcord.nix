@@ -1,7 +1,7 @@
 _: {
   programs.nixcord = {
     enable = true;
-    openASAR.enable = true;
+    discord.openASAR.enable = true;
     vesktop.enable = true;
     quickCss = builtins.readFile ./quickCSS.css;
     config = {
