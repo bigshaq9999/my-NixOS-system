@@ -6,7 +6,7 @@ _: {
     "editor.fontSize" = 13;
     "editor.fontFamily" = "Hack Nerd Font";
     "editor.fontLigatures" = true;
-    "editor.cursorSurroundingLines" = 6;
+    "editor.cursorSurroundingLines" = 2;
     "editor.rulers" = [ 80 ];
     "editor.minimap.enabled" = false;
     "editor.mouseWheelZoom" = true;
