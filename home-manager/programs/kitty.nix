@@ -6,7 +6,7 @@ _: {
       name = "Hack Nerd Font";
       size = 12;
     };
-    theme = "Solarized Dark - Patched";
+    themeFile = "Solarized_Dark_-_Patched";
     settings = {
       draw_minimal_borders = "yes";
 
