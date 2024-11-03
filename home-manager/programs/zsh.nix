@@ -10,16 +10,16 @@
     shellAliases = {
       ll = "eza -lah";
       update = "nix-channel --update";
-      upgradenoswitch = "nixos-rebuild boot --use-remote-sudo";
-      upgrade = "nixos-rebuild switch --use-remote-sudo";
+      upgrade = "cd /etc/nixos && nixos-rebuild switch --use-remote-sudo -v --flake .#nixos";
       garbage = "sudo nix-collect-garbage --delete-older-than 14d";
-      todo = "vim /home/nanachi/todo.md";
+      todo = "vi /home/nanachi/todo/";
       cfg = "cd /etc/nixos && vi ./";
       copydir = "pwd | xclip -selection clipboard";
       gpp = "c++ -Wall -Weffc++ -Wextra -Wsign-conversion -pedantic-errors -Werror";
       gpp17 = "c++ -Wall -Weffc++ -Wextra -Wsign-conversion -pedantic-errors -Werror -std=c++17";
       gpp20 = "c++ -Wall -Weffc++ -Wextra -Wsign-conversion -pedantic-errors -Werror -std=c++20";
       gcf = "c++ -Wall -O2 -std=c++20 -g";
+      runjava = ''f() { javac "''$1" && java "''${1%.java}"; }; f'';
     };
     oh-my-zsh = {
       enable = true;
