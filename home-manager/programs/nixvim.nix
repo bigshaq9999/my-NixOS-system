@@ -60,10 +60,15 @@
       };
       lint = {
         enable = true;
+        lintersByFt = {
+          sql = [ "sqlfluff" ];
+        };
       };
       lsp = {
         enable = true;
-        servers = {nil-ls.enable = true;};
+        servers = {
+          nil-ls.enable = true;
+        };
       };
       gitsigns = {
         enable = true;
