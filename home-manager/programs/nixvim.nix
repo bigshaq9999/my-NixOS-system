@@ -175,7 +175,7 @@
               __unkeyed-1 = "<leader>y";
               __unkeyed-2 = "\"+y";
               desc = "yank to clipboard";
-              mode = "n";
+              mode = "v";
             }
           ];
         };
