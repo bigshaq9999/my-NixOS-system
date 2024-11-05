@@ -101,6 +101,7 @@ in
       # riseup-vpn
       treesheets
       francis
+      nekoray
       ;
   };
 }
