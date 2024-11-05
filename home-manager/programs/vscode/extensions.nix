@@ -44,7 +44,7 @@ in
     latex-workshop = vscode-marketplace.james-yu.latex-workshop;
 
     # XML
-    vscode-xml = vscode-marketplace.redhat.vscode-xml;
+    # vscode-xml = vscode-marketplace.redhat.vscode-xml; # Breaks rn
 
     # JSON
     jsoncrack-vscode = vscode-marketplace.aykutsarac.jsoncrack-vscode;

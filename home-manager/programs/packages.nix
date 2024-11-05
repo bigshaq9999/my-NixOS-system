@@ -92,13 +92,13 @@ in
       anki-bin
       bitwarden
       brave
-      calyx-vpn
+      # calyx-vpn
       gImageReader
       gimp
       mullvad-vpn
       networkmanager-openvpn
       obs-studio
-      riseup-vpn
+      # riseup-vpn
       treesheets
       francis
       ;
