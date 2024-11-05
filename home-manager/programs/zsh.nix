@@ -9,7 +9,6 @@
     defaultKeymap = "emacs";
     shellAliases = {
       ll = "eza -lah";
-      update = "nix-channel --update";
       upgrade = "cd /etc/nixos && nixos-rebuild switch --use-remote-sudo -v --flake .#nixos";
       garbage = "sudo nix-collect-garbage --delete-older-than 14d";
       todo = "vi /home/nanachi/todo/";
