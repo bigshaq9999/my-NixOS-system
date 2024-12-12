@@ -61,9 +61,6 @@
       };
       lint = {
         enable = true;
-        lintersByFt = {
-          sql = [ "sqlfluff" ];
-        };
       };
       lsp = {
         enable = true;

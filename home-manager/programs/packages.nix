@@ -56,7 +56,6 @@ in
       github-cli
       gitui
       nil
-      sqlfluff
       mycli
       ;
 
