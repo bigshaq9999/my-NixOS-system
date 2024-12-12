@@ -160,6 +160,7 @@
   # Set default editor
   environment.variables = {
     EDITOR = "nvim";
+    FREETYPE_PROPERTIES = "cff:no-stem-darkening=0 autofitter:no-stem-darkening=0";
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
