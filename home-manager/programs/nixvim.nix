@@ -180,8 +180,8 @@
       };
     };
 
-    extraPackages = [
-      pkgs.vimPlugins.vim-sensible
+    extraPackages = with pkgs.vimPlugins; [
+      vim-sensible
     ];
 
     globals = {
