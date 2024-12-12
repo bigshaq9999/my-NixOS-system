@@ -4,7 +4,7 @@ _: {
     "zenMode.hideLineNumbers" = false;
 
     "editor.fontSize" = 13;
-    "editor.fontFamily" = "Hack Nerd Font";
+    "editor.fontFamily" = "JetBrainsMonoNL Nerd Font Mono";
     "editor.fontLigatures" = true;
     "editor.cursorSurroundingLines" = 2;
     "editor.rulers" = [ 80 ];
@@ -18,7 +18,7 @@ _: {
 
     "debug.console.fontSize" = 13;
     "security.workspace.trust.untrustedFiles" = "open";
-    "terminal.integrated.fontFamily" = "Hack Nerd Font";
+    "terminal.integrated.fontFamily" = "JetBrainsMonoNL Nerd Font Mono";
     "window.menuBarVisibility" = "toggle";
     "window.zoomLevel" = 0.75;
     "workbench.sideBar.location" = "right";

@@ -3,7 +3,7 @@ _: {
     enable = true;
     shellIntegration.enableZshIntegration = true;
     font = {
-      name = "Hack Nerd Font";
+      name = "JetBrainsMonoNL Nerd Font Mono";
       size = 12;
     };
     themeFile = "Solarized_Dark_-_Patched";

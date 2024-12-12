@@ -42,16 +42,14 @@
     };
     packages = builtins.attrValues {
       inherit (pkgs)
-        hack-font
         noto-fonts
         noto-fonts-cjk-sans
         noto-fonts-emoji
+        twitter-color-emoji
         ;
-      nerdfonts = pkgs.nerdfonts.override {
-        fonts = [
-          "Hack"
-        ];
-      };
+      inherit (pkgs.nerd-fonts)
+        jetbrains-mono
+        ;
     };
     fontDir.enable = true;
   };
