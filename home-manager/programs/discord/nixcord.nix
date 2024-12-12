@@ -85,7 +85,7 @@ _: {
         revealAllSpoilers.enable = true;
         reverseImageSearch.enable = true;
         roleColorEverywhere.enable = true;
-        searchReply.enable = true;
+        fullSearchContext.enable = true;
         serverInfo.enable = true;
         serverListIndicators.enable = true;
         shikiCodeblocks.enable = true;
