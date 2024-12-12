@@ -19,7 +19,7 @@
   ];
 
   nixpkgs = {
-    overlays = [ inputs.nur.overlay ];
+    overlays = [ inputs.nur.overlays.default ];
     config = {
       allowUnfree = true;
     };
