@@ -6,7 +6,7 @@ _: {
       name = "JetBrainsMonoNL Nerd Font Mono";
       size = 12;
     };
-    themeFile = "Solarized_Dark_-_Patched";
+    themeFile = "ayu_light";
     settings = {
       draw_minimal_borders = "yes";
 

@@ -55,7 +55,7 @@ in
 
     # UI Enhancement
     vscode-icons = vscode-marketplace.vscode-icons-team.vscode-icons;
-    gruvbox = vscode-marketplace.jdinhlife.gruvbox;
+    ayu = vscode-marketplace.teabyii.ayu;
     indent-rainbow = vscode-marketplace.oderwat.indent-rainbow;
     errorlens = vscode-marketplace.usernamehw.errorlens;
 

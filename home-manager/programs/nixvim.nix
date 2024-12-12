@@ -192,7 +192,7 @@
 
     colorschemes.base16 = {
       enable = true;
-      colorscheme = "solarized-dark";
+      colorscheme = "ayu-light";
       settings = {
         telescope = true;
         telescope_borders = true;
