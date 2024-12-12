@@ -143,8 +143,10 @@
   programs.virt-manager.enable = true;
 
   # Docker 
-  # virtualisation.docker.enable = true;
-
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
   # MySQL
   services.mysql = {
     enable = true;
