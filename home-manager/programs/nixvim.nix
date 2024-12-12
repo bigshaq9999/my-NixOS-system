@@ -42,6 +42,7 @@
     };
 
     plugins = {
+      web-devicons.enable = true;
       cmp = {
         enable = true;
         autoEnableSources = true;
