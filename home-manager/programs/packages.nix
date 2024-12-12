@@ -57,6 +57,8 @@ in
       gitui
       nil
       mycli
+      emacs
+      ripgrep
       ;
 
     # Videos
