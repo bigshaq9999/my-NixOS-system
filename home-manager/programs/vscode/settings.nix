@@ -21,7 +21,7 @@ _: {
     "terminal.integrated.fontFamily" = "JetBrainsMonoNL Nerd Font Mono";
     "window.menuBarVisibility" = "toggle";
     "window.zoomLevel" = 0.75;
-    "workbench.sideBar.location" = "right";
+    "workbench.sideBar.location" = "left";
 
     "workbench.colorTheme" = "Ayu Light";
 
