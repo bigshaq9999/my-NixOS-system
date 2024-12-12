@@ -63,7 +63,7 @@
                     ./home-manager/home.nix
 
                     inputs.nixcord.homeManagerModules.nixcord
-                    inputs.nur.nixosModules.nur
+                    inputs.nur.modules.homeManager.default
                     inputs.nixvim.homeManagerModules.nixvim
                   ];
 
