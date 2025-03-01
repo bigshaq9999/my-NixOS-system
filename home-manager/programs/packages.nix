@@ -71,6 +71,7 @@ in
       signal-desktop
       tdesktop
       thunderbird-bin
+      mailspring
       ;
 
     # Sound
@@ -87,22 +88,21 @@ in
     inherit (pkgs) libreoffice-qt-still zoom-us;
 
     # KDE Plasma
-    inherit (pkgs.libsForQt5) ark kolourpaint okular;
+    inherit (pkgs.kdePackages) ark kolourpaint okular kclock;
 
     inherit (pkgs)
       anki-bin
       bitwarden
       brave
-      # calyx-vpn
       gImageReader
       gimp
       mullvad-vpn
       networkmanager-openvpn
       obs-studio
-      # riseup-vpn
       treesheets
       francis
       nekoray
+      ollama
       ;
   };
 }
