@@ -2,7 +2,7 @@ _: {
   programs.nixcord = {
     enable = true;
     discord.openASAR.enable = true;
-    vesktop.enable = true;
+    vesktop.enable = false;
     quickCss = builtins.readFile ./quickCSS.css;
     config = {
       useQuickCss = true;
@@ -66,7 +66,6 @@ _: {
         noPendingCount.enable = true;
         noProfileThemes.enable = true;
         noRPC.enable = true;
-        noScreensharePreview.enable = true;
         noTypingAnimation.enable = true;
         noUnblockToJump.enable = true;
         normalizeMessageLinks.enable = true;
