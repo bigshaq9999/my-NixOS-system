@@ -10,8 +10,6 @@
     highlight = {
       MatchParen = {
         bold = true;
-        fg = "#fdf6e3";
-        bg = "#073642";
       };
     };
 
@@ -58,9 +56,6 @@
             "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
           };
         };
-      };
-      lint = {
-        enable = true;
       };
       lsp = {
         enable = true;
@@ -120,7 +115,7 @@
           view.width = 30;
         };
         hijackCursor = true;
-        openOnSetup = true;
+        openOnSetup = false;
       };
       telescope = {
         enable = true;
@@ -190,7 +185,7 @@
 
     colorschemes.base16 = {
       enable = true;
-      colorscheme = "ayu-light";
+      colorscheme = "catppuccin-latte";
       settings = {
         telescope = true;
         telescope_borders = true;
