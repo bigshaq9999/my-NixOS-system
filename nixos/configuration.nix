@@ -55,11 +55,21 @@
     dates = "monthly";
   };
 
-  networking.hostName = "nixos";
-  networking.networkmanager = {
-    enable = true;
-    plugins = builtins.attrValues { inherit (pkgs) networkmanager-openvpn; };
-    wifi.powersave = true;
+  networking = {
+    hostName = "nixos";
+    networkmanager = {
+      enable = true;
+      plugins = builtins.attrValues { inherit (pkgs) networkmanager-openvpn; };
+      wifi.powersave = true;
+    };
+    hosts = {
+      "0.0.0.0" = lib.subtractLists [""] (lib.splitString "\n" (
+        builtins.readFile (builtins.fetchurl {
+          url = "https://raw.githubusercontent.com/Bon-Appetit/porn-domains/refs/heads/master/block.txt"; 
+          sha256 = "1s2whbcil5jjx6sxkz3dnpk8gacwnwl0g7j9021qjdvihnygikpm"; 
+        }) 
+      ));
+    };
   };
 
   # VPN
