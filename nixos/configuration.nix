@@ -70,6 +70,7 @@
         }) 
       ));
     };
+    firewall .allowedTCPPorts = [3000];
   };
 
   # VPN
@@ -165,6 +166,11 @@
 
   services.flatpak.enable = true;
   services.earlyoom.enable = true;
+
+  services.basic-go-web-app = {
+    enable = true; 
+    port = 3000;
+  };
 
   programs.htop.enable = true;
 

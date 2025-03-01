@@ -23,6 +23,9 @@
 
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
+    basic-go-web-app.url = "path:/home/nanachi/playground/golang/simpleWebService";
+    basic-go-web-app.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -40,6 +43,7 @@
           };
           modules = [
             ./nixos/configuration.nix
+            inputs.basic-go-web-app.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager = {
