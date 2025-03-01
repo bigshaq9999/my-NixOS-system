@@ -4,10 +4,6 @@ let
     (inputs.nix-vscode-extensions.extensions.${pkgs.system}.forVSCodeVersion pkgs.vscode.version)
     vscode-marketplace
     ;
-  inherit
-    (inputs.nix-vscode-extensions.extensions.${pkgs.system}.forVSCodeVersion pkgs.vscode.version)
-    vscode-marketplace-release
-    ;
 in
 {
   programs.vscode.extensions = builtins.attrValues {
