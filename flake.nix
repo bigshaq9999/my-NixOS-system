@@ -58,6 +58,7 @@
                     ./home-manager/programs/chromium.nix
                     ./home-manager/programs/direnv.nix
                     ./home-manager/programs/kitty.nix
+                    ./home-manager/programs/taskwarrior.nix
                     ./home-manager/programs/packages.nix
                     ./home-manager/programs/zsh.nix
                     ./home-manager/home.nix
