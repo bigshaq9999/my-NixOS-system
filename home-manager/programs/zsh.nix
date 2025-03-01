@@ -12,7 +12,7 @@
       upgrade = "cd /etc/nixos && nixos-rebuild switch --use-remote-sudo -v --flake .#nixos";
       garbage = "sudo nix-collect-garbage --delete-older-than 14d";
       todo = "vi /home/nanachi/todo/";
-      cfg = "cd /etc/nixos && vi ./";
+      cfg = "cd /etc/nixos && vi ./nixos/configuration.nix";
       copydir = "pwd | xclip -selection clipboard";
       gpp = "c++ -Wall -Weffc++ -Wextra -Wsign-conversion -pedantic-errors -Werror";
       gpp17 = "c++ -Wall -Weffc++ -Wextra -Wsign-conversion -pedantic-errors -Werror -std=c++17";
