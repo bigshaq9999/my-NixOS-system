@@ -164,6 +164,7 @@
   };
 
   services.flatpak.enable = true;
+  services.earlyoom.enable = true;
 
   programs.htop.enable = true;
 
