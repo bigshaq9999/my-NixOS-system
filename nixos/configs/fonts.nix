@@ -36,6 +36,8 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
+        serif = [ "Noto Serif" ];
+        sansSerif = [ "Noto Sans" ];
         monospace = [ "Hack" ];
         emoji = [ "Twitter Color Emoji" ];
       };
