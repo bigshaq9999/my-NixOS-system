@@ -85,15 +85,20 @@ in
     inherit (pkgs) winetricks;
 
     # Educational
-    inherit (pkgs) libreoffice-qt-still zoom-us;
+    inherit (pkgs) libreoffice-still zoom-us;
 
     # KDE Plasma
-    inherit (pkgs.kdePackages) ark kolourpaint okular kclock;
+    inherit (pkgs.kdePackages)
+      ark
+      kolourpaint
+      okular
+      kclock
+      # dolphin
+      ;
 
     inherit (pkgs)
       anki-bin
       bitwarden
-      brave
       gImageReader
       gimp
       mullvad-vpn
@@ -103,6 +108,28 @@ in
       francis
       nekoray
       ollama
+      ;
+
+    # for Niri
+    inherit (pkgs)
+      cliphist
+      fuzzel
+      libayatana-appindicator
+      mako
+      pcmanfm
+      # Extends pcmanfm #
+      libgsf # opendocument thumbnail
+      ffmpegthumbnailer # video thumbnail
+      evince # pdf thumbnail
+      ###
+      polkit_gnome
+      swaybg
+      swayidle
+      swaylock
+      waybar
+      wl-clipboard
+      wlogout
+      #  xwayland-satellite
       ;
   };
 }
