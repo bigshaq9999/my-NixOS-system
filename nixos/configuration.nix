@@ -162,6 +162,18 @@
     FREETYPE_PROPERTIES = "cff:no-stem-darkening=0 autofitter:no-stem-darkening=0";
   };
 
+  # Experimenting with systemd to get swaybg to work on niri
+  systemd.user.services = {
+    swaybg = {
+      description = "wallpaper";
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${lib.getExe pkgs.swaybg} -i /home/nanachi/Downloads/Media/wallpapers/16-9_IMG_7584.png";
+        Restart = "on-failure";
+      };
+    };
+  };
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.11";
 }
