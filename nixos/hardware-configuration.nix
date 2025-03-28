@@ -26,7 +26,8 @@
     fsType = "ext4";
   };
 
-  boot.initrd.luks.devices."luks-eebbd6d2-dd7f-42ae-98b5-03c6f4f65598".device = "/dev/disk/by-uuid/eebbd6d2-dd7f-42ae-98b5-03c6f4f65598";
+  boot.initrd.luks.devices."luks-eebbd6d2-dd7f-42ae-98b5-03c6f4f65598".device =
+    "/dev/disk/by-uuid/eebbd6d2-dd7f-42ae-98b5-03c6f4f65598";
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/6C45-D370";
@@ -37,8 +38,19 @@
     ];
   };
 
-  swapDevices = [ 
-    { device = "/dev/disk/by-uuid/1c98642c-2bb8-4131-8d97-748c650a06fd"; } 
+  fileSystems."/mnt/681afb9b-33fa-454f-a46e-0c6b5468e284" = {
+    device = "/dev/disk/by-uuid/681afb9b-33fa-454f-a46e-0c6b5468e284";
+    fsType = "ext4";
+    options = [
+      "users"
+      "nofail"
+      "exec"
+      "x-gvfs-show"
+    ];
+  };
+
+  swapDevices = [
+    { device = "/dev/disk/by-uuid/1c98642c-2bb8-4131-8d97-748c650a06fd"; }
     {
       device = "/var/lib/swapfile";
     }
