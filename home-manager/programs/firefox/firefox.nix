@@ -1,19 +1,17 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
-  programs.firefox = {
+  programs.floorp = {
     enable = true;
-    package = pkgs.firefox-bin;
+    package = pkgs.floorp;
     profiles.main = {
       isDefault = true;
       settings = {
-        "widget.use-xdg-desktop-portal.file-picker" = 1; # KDE file picker
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # userChrome.css
       };
 
       extensions = builtins.attrValues {
         inherit (pkgs.nur.repos.rycee.firefox-addons)
           ublock-origin
-          tree-style-tab
           sponsorblock
           dearrow
           return-youtube-dislikes
@@ -23,27 +21,25 @@
           ;
       };
 
-      userChrome = builtins.readFile ./userChrome.css;
+      # userChrome = builtins.readFile ./userChrome.css;
     };
 
     profiles.work = {
       id = 1;
       settings = {
-        "widget.use-xdg-desktop-portal.file-picker" = 1; # KDE file picker
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # userChrome.css
       };
 
       extensions = builtins.attrValues {
         inherit (pkgs.nur.repos.rycee.firefox-addons)
           ublock-origin
-          tree-style-tab
           sponsorblock
           return-youtube-dislikes
           vimium-c
           ;
       };
 
-      userChrome = builtins.readFile ./userChrome.css;
+      # userChrome = builtins.readFile ./userChrome.css;
     };
 
     policies = {
