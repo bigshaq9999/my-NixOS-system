@@ -97,7 +97,8 @@
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.luks.devices."luks-92b50b02-632d-47ab-9c84-a28c1d4ded01".device = "/dev/disk/by-uuid/92b50b02-632d-47ab-9c84-a28c1d4ded01";
+  boot.initrd.luks.devices."luks-92b50b02-632d-47ab-9c84-a28c1d4ded01".device =
+    "/dev/disk/by-uuid/92b50b02-632d-47ab-9c84-a28c1d4ded01";
 
   # Enable sound.
   services.pulseaudio.enable = false;
