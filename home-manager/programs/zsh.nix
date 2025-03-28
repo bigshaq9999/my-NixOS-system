@@ -14,11 +14,6 @@
       todo = "vi /home/nanachi/todo/";
       cfg = "cd /etc/nixos && vi ./nixos/configuration.nix";
       copydir = "pwd | xclip -selection clipboard";
-      gpp = "c++ -Wall -Weffc++ -Wextra -Wsign-conversion -pedantic-errors -Werror";
-      gpp17 = "c++ -Wall -Weffc++ -Wextra -Wsign-conversion -pedantic-errors -Werror -std=c++17";
-      gpp20 = "c++ -Wall -Weffc++ -Wextra -Wsign-conversion -pedantic-errors -Werror -std=c++20";
-      gcf = "c++ -Wall -O2 -std=c++20 -g";
-      runjava = ''f() { javac "''$1" && java "''${1%.java}"; }; f'';
     };
     oh-my-zsh = {
       enable = true;
