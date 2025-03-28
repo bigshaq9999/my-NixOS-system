@@ -1,6 +1,6 @@
 _: {
   programs.taskwarrior = {
-    enable = true; 
-    colorTheme = "light-256";
+    enable = true;
+    colorTheme = "dark-256";
   };
 }
