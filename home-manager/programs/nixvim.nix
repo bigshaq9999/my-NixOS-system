@@ -185,7 +185,7 @@
 
     colorschemes.base16 = {
       enable = true;
-      colorscheme = "catppuccin-latte";
+      colorscheme = "catppuccin-frappe";
       settings = {
         telescope = true;
         telescope_borders = true;
