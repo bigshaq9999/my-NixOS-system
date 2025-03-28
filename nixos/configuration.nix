@@ -13,13 +13,17 @@
     ./hardware-configuration.nix
     ./configs/fonts.nix
     ./configs/input.nix
-    ./configs/plasma.nix
+    # ./configs/plasma.nix
+    ./configs/niri.nix
     ./configs/power.nix
     ./configs/program-config.nix
   ];
 
   nixpkgs = {
-    overlays = [ inputs.nur.overlays.default ];
+    overlays = [
+      inputs.nur.overlays.default
+      inputs.niri.overlays.niri
+    ];
     config = {
       allowUnfree = true;
     };
@@ -46,7 +50,7 @@
     auto-optimise-store = true;
   };
 
-  # Needed for store VSCode auth token
+  # Secret portal for window managers
   services.gnome.gnome-keyring.enable = true;
 
   # Automated services
@@ -62,15 +66,6 @@
       plugins = builtins.attrValues { inherit (pkgs) networkmanager-openvpn; };
       wifi.powersave = true;
     };
-    hosts = {
-      "0.0.0.0" = lib.subtractLists [""] (lib.splitString "\n" (
-        builtins.readFile (builtins.fetchurl {
-          url = "https://raw.githubusercontent.com/Bon-Appetit/porn-domains/refs/heads/master/block.txt"; 
-          sha256 = "1s2whbcil5jjx6sxkz3dnpk8gacwnwl0g7j9021qjdvihnygikpm"; 
-        }) 
-      ));
-    };
-    firewall .allowedTCPPorts = [3000];
   };
 
   # VPN
