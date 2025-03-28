@@ -15,7 +15,7 @@
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
 
-    # @donteatoreo - dis is a simple tool to compress videos 
+    # @donteatoreo - dis is a simple tool to compress videos
     dis.url = "github:DontEatOreo/dis";
     dis.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -24,8 +24,12 @@
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
-    basic-go-web-app.url = "path:/home/nanachi/playground/golang/simpleWebService";
-    basic-go-web-app.inputs.nixpkgs.follows = "nixpkgs";
+    # Niri, the scrollable-tiling wayland compositor
+    niri.url = "github:sodiboo/niri-flake";
+    niri.inputs.nixpkgs.follows = "nixpkgs";
+
+    catppuccin.url = "github:catppuccin/nix";
+    catppuccin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -43,7 +47,6 @@
           };
           modules = [
             ./nixos/configuration.nix
-            inputs.basic-go-web-app.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
             {
               home-manager = {
@@ -57,6 +60,9 @@
                     ./home-manager/programs/vscode/extensions.nix
                     ./home-manager/programs/vscode/settings.nix
 
+                    ./home-manager/programs/ghostty.nix
+                    ./home-manager/programs/niri.nix
+                    ./home-manager/programs/wlogout.nix
                     ./home-manager/programs/firefox/firefox.nix
                     ./home-manager/programs/discord/nixcord.nix
                     ./home-manager/programs/chromium.nix
@@ -65,18 +71,21 @@
                     ./home-manager/programs/taskwarrior.nix
                     ./home-manager/programs/packages.nix
                     ./home-manager/programs/zsh.nix
+                    ./home-manager/programs/nushell.nix
                     ./home-manager/home.nix
 
                     inputs.nixcord.homeManagerModules.nixcord
                     inputs.nur.modules.homeManager.default
                     inputs.nixvim.homeManagerModules.nixvim
+                    inputs.niri.homeModules.niri
+                    inputs.catppuccin.homeManagerModules.catppuccin
                   ];
 
                   home = {
                     stateVersion = "24.11";
                   };
                 };
-                backupFileExtension = "backup1";
+                backupFileExtension = "bak";
                 extraSpecialArgs = {
                   inherit inputs;
                 };
