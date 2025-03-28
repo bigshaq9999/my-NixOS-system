@@ -126,6 +126,7 @@
         "wheel"
         "docker"
         "libvirtd"
+        "video"
       ];
     };
   };
@@ -139,14 +140,14 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
-  # Docker 
+  # Docker
   virtualisation.docker.rootless = {
     enable = true;
     setSocketVariable = true;
   };
   # MySQL
   services.mysql = {
-    enable = true;
+    enable = false;
     package = pkgs.mysql84;
   };
 
