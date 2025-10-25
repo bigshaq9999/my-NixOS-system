@@ -21,7 +21,7 @@ _: {
         clearURLs.enable = true;
         colorSighted.enable = true;
         consoleJanitor.enable = true;
-        consoleJanitor.disableNoisyLoggers = true;
+        # consoleJanitor.disableNoisyLoggers = true;
         crashHandler.enable = true;
         dearrow.enable = true;
         dontRoundMyTimestamps.enable = true;
@@ -35,7 +35,7 @@ _: {
         friendsSince.enable = true;
         gifPaste.enable = true;
         greetStickerPicker.enable = true;
-        hideAttachments.enable = true;
+        # hideAttachments.enable = true;
         ignoreActivities = {
           enable = true;
           ignorePlaying = true;

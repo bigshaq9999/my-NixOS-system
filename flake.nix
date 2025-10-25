@@ -21,8 +21,8 @@
 
     nixcord.url = "github:kaylorben/nixcord";
 
-    nixvim.url = "github:nix-community/nixvim";
-    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+    # nixvim.url = "github:nix-community/nixvim";
+    # nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     # Niri, the scrollable-tiling wayland compositor
     # niri.url = "github:sodiboo/niri-flake";
@@ -57,7 +57,7 @@
                 useUserPackages = true;
                 users.${userName} = {
                   imports = [
-                    ./home-manager/programs/nixvim.nix
+                    # ./home-manager/programs/nixvim.nix
                     ./home-manager/programs/helix.nix
 
                     ./home-manager/programs/vscode/default.nix
@@ -65,12 +65,12 @@
                     ./home-manager/programs/vscode/settings.nix
 
                     ./home-manager/programs/ghostty.nix
-                    ./home-manager/programs/theming.nix
-                    ./home-manager/programs/dconf.nix
+                    # ./home-manager/programs/theming.nix
+                    # ./home-manager/programs/dconf.nix
                     # ./home-manager/programs/niri.nix
                     # ./home-manager/programs/wlogout.nix
                     ./home-manager/programs/firefox/firefox.nix
-                    # ./home-manager/programs/discord/nixcord.nix
+                    ./home-manager/programs/discord/nixcord.nix
                     ./home-manager/programs/chromium.nix
                     ./home-manager/programs/direnv.nix
                     ./home-manager/programs/kitty.nix
@@ -82,9 +82,9 @@
 
                     inputs.nixcord.homeModules.nixcord
                     inputs.nur.modules.homeManager.default
-                    inputs.nixvim.homeManagerModules.nixvim
+                    # inputs.nixvim.homeManagerModules.nixvim
                     # inputs.niri.homeModules.niri
-                    inputs.catppuccin.homeManagerModules.catppuccin
+                    inputs.catppuccin.homeModules.catppuccin
                   ];
 
                   home = {

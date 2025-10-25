@@ -6,7 +6,7 @@ let
     ;
 in
 {
-  programs.vscode.extensions = builtins.attrValues {
+  programs.vscode.profiles.default.extensions = builtins.attrValues {
     # General Development
     # vscode-remote-extensionpack = vscode-marketplace.ms-vscode-remote.vscode-remote-extensionpack;
     vsliveshare = vscode-marketplace.ms-vsliveshare.vsliveshare;

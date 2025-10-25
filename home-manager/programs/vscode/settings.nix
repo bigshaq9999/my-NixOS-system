@@ -1,5 +1,5 @@
 _: {
-  programs.vscode.userSettings = {
+  programs.vscode.profiles.default.userSettings = {
     "zenMode.fullScreen" = false;
     "zenMode.hideLineNumbers" = false;
 

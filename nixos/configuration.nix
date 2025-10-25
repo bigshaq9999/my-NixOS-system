@@ -12,7 +12,7 @@
   imports = [
     ./hardware-configuration.nix
     ./configs/fonts.nix
-    ./configs/input.nix
+    # ./configs/input.nix
     ./configs/plasma.nix
     # ./configs/gnome.nix
     # ./configs/niri.nix
@@ -139,7 +139,7 @@
   services.mysql = {
     enable = true;
     # user = "nanachi";
-    package = pkgs.mysql84;
+    package = pkgs.mysql80;
   };
 
   hardware.uinput.enable = true;
@@ -171,5 +171,5 @@
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
 }
