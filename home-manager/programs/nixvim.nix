@@ -36,7 +36,8 @@
       termguicolors = true;
       timeoutlen = 0;
       wildmenu = true;
-      wrap = false;
+      wrap = true;
+      linebreak = true;
     };
 
     plugins = {

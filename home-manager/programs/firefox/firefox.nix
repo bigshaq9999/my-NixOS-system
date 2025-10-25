@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   programs.floorp = {
-    enable = true;
-    package = pkgs.floorp;
+    enable = false;
+    package = pkgs.floorp-bin;
     profiles.main = {
       isDefault = true;
       settings = {
@@ -17,24 +17,6 @@
           return-youtube-dislikes
           violentmonkey
           darkreader
-          vimium-c
-          ;
-      };
-
-      # userChrome = builtins.readFile ./userChrome.css;
-    };
-
-    profiles.work = {
-      id = 1;
-      settings = {
-        "toolkit.legacyUserProfileCustomizations.stylesheets" = true; # userChrome.css
-      };
-
-      extensions = builtins.attrValues {
-        inherit (pkgs.nur.repos.rycee.firefox-addons)
-          ublock-origin
-          sponsorblock
-          return-youtube-dislikes
           vimium-c
           ;
       };

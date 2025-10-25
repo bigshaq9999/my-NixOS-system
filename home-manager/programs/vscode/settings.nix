@@ -4,7 +4,7 @@ _: {
     "zenMode.hideLineNumbers" = false;
 
     "editor.fontSize" = 13;
-    "editor.fontFamily" = "JetBrainsMonoNL Nerd Font Mono";
+    "editor.fontFamily" = "'JetBrainsMonoNL Nerd Font Mono', monospace";
     "editor.fontLigatures" = true;
     "editor.cursorSurroundingLines" = 2;
     "editor.rulers" = [ 80 ];
@@ -15,6 +15,7 @@ _: {
     "security.workspace.trust.enabled" = false;
     "editor.accessibilitySupport" = "off";
     "editor.lineNumbers" = "relative";
+    "editor.cursorStyle" = "line-thin";
 
     "debug.console.fontSize" = 13;
     "security.workspace.trust.untrustedFiles" = "open";
@@ -23,7 +24,7 @@ _: {
     "window.zoomLevel" = 0.75;
     "workbench.sideBar.location" = "left";
 
-    "workbench.colorTheme" = "Ayu Light";
+    "workbench.colorTheme" = "Catppuccin Frappé";
 
     "latex-workshop.latex.autoBuild.run" = "never";
 

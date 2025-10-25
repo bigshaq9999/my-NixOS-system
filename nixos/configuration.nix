@@ -13,16 +13,19 @@
     ./hardware-configuration.nix
     ./configs/fonts.nix
     ./configs/input.nix
-    # ./configs/plasma.nix
-    ./configs/niri.nix
+    ./configs/plasma.nix
+    # ./configs/gnome.nix
+    # ./configs/niri.nix
     ./configs/power.nix
     ./configs/program-config.nix
+
+    ./configs/kanata.nix
   ];
 
   nixpkgs = {
     overlays = [
       inputs.nur.overlays.default
-      inputs.niri.overlays.niri
+      # inputs.niri.overlays.niri
     ];
     config = {
       allowUnfree = true;
@@ -127,9 +130,19 @@
         "docker"
         "libvirtd"
         "video"
+        "input"
+        "uinput"
       ];
     };
   };
+
+  services.mysql = {
+    enable = true;
+    # user = "nanachi";
+    package = pkgs.mysql84;
+  };
+
+  hardware.uinput.enable = true;
 
   # Gaming
   programs.steam = {
@@ -145,11 +158,6 @@
     enable = true;
     setSocketVariable = true;
   };
-  # MySQL
-  services.mysql = {
-    enable = false;
-    package = pkgs.mysql84;
-  };
 
   services.flatpak.enable = true;
   services.earlyoom.enable = true;
@@ -160,18 +168,6 @@
   environment.variables = {
     EDITOR = "nvim";
     FREETYPE_PROPERTIES = "cff:no-stem-darkening=0 autofitter:no-stem-darkening=0";
-  };
-
-  # Experimenting with systemd to get swaybg to work on niri
-  systemd.user.services = {
-    swaybg = {
-      description = "wallpaper";
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${lib.getExe pkgs.swaybg} -i /home/nanachi/Downloads/Media/wallpapers/16-9_IMG_7584.png";
-        Restart = "on-failure";
-      };
-    };
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

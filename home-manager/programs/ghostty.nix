@@ -78,11 +78,6 @@ let
       "${superKey}+shift+minus=decrease_font_size:1"
     ];
 
-    clipboard = [
-      (mkSuperPerf "c" "copy_to_clipboard")
-      (mkSuperPerf "v" "paste_from_clipboard")
-    ];
-
     misc = [
       (mkSuper "a" "select_all")
       (mkSuper "," "reload_config")

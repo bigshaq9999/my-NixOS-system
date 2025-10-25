@@ -71,7 +71,6 @@ in
       signal-desktop
       tdesktop
       thunderbird-bin
-      mailspring
       ;
 
     # Sound
@@ -92,8 +91,6 @@ in
       ark
       kolourpaint
       okular
-      kclock
-      # dolphin
       ;
 
     inherit (pkgs)
@@ -105,31 +102,16 @@ in
       networkmanager-openvpn
       obs-studio
       treesheets
-      francis
       nekoray
       ollama
+      strawberry
+      gnome-solanum
       ;
 
-    # for Niri
+    # Games 
     inherit (pkgs)
-      cliphist
-      fuzzel
-      libayatana-appindicator
-      mako
-      pcmanfm
-      # Extends pcmanfm #
-      libgsf # opendocument thumbnail
-      ffmpegthumbnailer # video thumbnail
-      evince # pdf thumbnail
-      ###
-      polkit_gnome
-      swaybg
-      swayidle
-      swaylock
-      waybar
-      wl-clipboard
-      wlogout
-      #  xwayland-satellite
+      mindustry-wayland
+      shattered-pixel-dungeon
       ;
   };
 }

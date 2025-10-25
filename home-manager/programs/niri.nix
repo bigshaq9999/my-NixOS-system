@@ -5,43 +5,6 @@
   ...
 }:
 {
-  home.pointerCursor = {
-    enable = true;
-    name = "phinger-cursors-light";
-    package = pkgs.phinger-cursors;
-    size = 64;
-    gtk.enable = true;
-    x11 = {
-      enable = true;
-      defaultCursor = "phinger-cursors-light";
-    };
-  };
-
-  gtk = {
-    enable = true;
-    cursorTheme = {
-      name = "Catppuccin-Frappe-Dark-Cursors";
-      package = pkgs.catppuccin-cursors.frappeDark;
-    };
-    iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
-    };
-    catppuccin = {
-      enable = true;
-      flavor = "frappe";
-      accent = "rosewater";
-      size = "standard";
-      tweaks = [ "normal" ];
-    };
-  };
-
-  qt = {
-    enable = true;
-    platformTheme.name = "kde6";
-    style.name = "breeze-dark";
-  };
-
   services.kanshi = {
     enable = true;
     settings = [
@@ -75,14 +38,6 @@
     ];
   };
 
-  catppuccin = {
-    enable = true;
-    flavor = "frappe";
-    accent = "rosewater";
-    waybar.enable = false;
-    kvantum.enable = false;
-  };
-
   xdg = {
     enable = true;
     portal = {
@@ -107,6 +62,7 @@
         xdg-desktop-portal-gnome
         xdg-desktop-portal-shana
         xdg-desktop-portal-wlr
+        xdg-desktop-portal-hyprland
       ];
       configPackages = with pkgs; [ gnome-session ];
     };
@@ -119,7 +75,7 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 20;
+        height = 10;
         modules-left = [ "niri/workspaces" ];
         modules-center = [ "niri/window" ];
         modules-right = [
@@ -271,17 +227,17 @@
         };
       };
       layout = {
-        gaps = 10;
+        gaps = 1;
         preset-column-widths = [
           { proportion = 1. / 3.; }
           { proportion = 1. / 2.; }
           { proportion = 2. / 3.; }
         ];
         default-column-width = {
-          proportion = 0.9;
+          proportion = 0.6;
         };
         focus-ring = {
-          width = 4;
+          width = 1;
           active.color = "#7fc8ff";
           inactive.color = "#505050";
         };
@@ -289,7 +245,7 @@
           enable = false;
         };
         shadow = {
-          enable = true;
+          enable = false;
         };
         # center-focused-column = "on-overflow";
       };
@@ -327,7 +283,7 @@
           # credit to github:linuxmobile/kaku
           geometry-corner-radius =
             let
-              radius = 16.0;
+              radius = 4.0;
             in
             {
               bottom-left = radius;
@@ -495,6 +451,8 @@
           "Mod+Shift+P".action = power-off-monitors;
 
           "Mod+Apostrophe".action = spawn "wlogout";
+
+          "Mod+M".action = spawn "wofi-emoji";
 
           "Mod+Slash".action = sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy";
         };
